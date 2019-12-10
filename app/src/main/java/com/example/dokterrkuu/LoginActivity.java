@@ -16,6 +16,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,20 +49,53 @@ public class LoginActivity extends AppCompatActivity {
                     user.setError("Please Fill The Empty Field(s) !!");
                     return;
                 }
+                else if(!username.contains("@") || !username.contains(".com")){
+                    FirebaseDatabase db = FirebaseDatabase.getInstance();
+                    DatabaseReference dbref = db.getReference("Users");
 
-                //AUTHENTICATION
+                    dbref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String Username = dataSnapshot.getValue(String.class);
+                            String Password = dataSnapshot.getValue(String.class);
+                            String namalog = user.getText().toString();
+                            String passlog = pass.getText().toString();
+                            if(namalog != Username || passlog != Password){
+                                Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
+                            }else if(namalog=="" || passlog==""){
+                                Toast.makeText(LoginActivity.this, "Please Fill The Empty Field(s)", Toast.LENGTH_SHORT).show();
+                            }
+                                else{
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }
 
-                firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        }else{
-                            Toast.makeText(LoginActivity.this, "Username Not Exist OR Wrong Credentials", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+
+
+
+                else{
+                    //AUTHENTICATION FIREBASE AUTO
+
+                    firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }else{
+                                Toast.makeText(LoginActivity.this, "Username Not Exist OR Wrong Credentials", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                }
 
             }
         });
