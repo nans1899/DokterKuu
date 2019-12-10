@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "224028289038-8i5heotup9nn1pdhos11bnf6b0up6jlj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dokterrkuu",
+            "certificate_hash": "faaca8918b0bb11e9caefe658537c4983bdb0cc0"
+          }
+        },
+        {
           "client_id": "224028289038-52u5hephgfqvdrhudb9l575jgoe2k666.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
