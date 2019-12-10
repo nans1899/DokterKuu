@@ -47,18 +47,45 @@
                 android:id="@+id/TglButt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tangga Janji"
+                android:text="Tanggal Janji"
                 android:background="#ffffff"
                 android:drawableLeft="@drawable/ic_perm_contact_calendar_black_24dp"
                 android:textColor="#000000"
                 android:layout_marginTop="160dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih Dokter"
+            android:textColor="#ffffff"
+            android:layout_marginTop="225dp"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-light/"/>
+
 
         <Spinner
             android:id="@+id/spinner1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="250dp"
+            android:spinnerMode="dropdown"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih Rumah Sakit"
+            android:textColor="#ffffff"
+            android:layout_marginTop="310dp"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-light/"/>
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginTop="335dp"
             android:spinnerMode="dropdown"/>
 
 
@@ -66,10 +93,10 @@
             android:id="@+id/LogButt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Buat Jnji"
             android:background="#75635f"
             android:textColor="#ffffff"
-            android:layout_marginTop="300dp"/>
+            android:layout_marginTop="400dp"/>
 
 
     </RelativeLayout>

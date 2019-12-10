@@ -29,6 +29,12 @@ public class DocAppointment extends AppCompatActivity {
         dropdown.setAdapter(adapter);
 
 
+        Spinner dropdown2 = findViewById(R.id.spinner2);
+        String[] items2 = new String[]{"Rs MMC", "Rs Pertamina", "Rs Cipto Mangunkusumo", "Rs AL Minthohardjo", "Rs Pelni"};
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items2);
+        dropdown2.setAdapter(adapter2);
+
+
 
     }
 
