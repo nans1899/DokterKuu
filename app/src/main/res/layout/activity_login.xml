@@ -39,6 +39,7 @@
                 android:layout_margin="10dp"
                 android:background="@android:color/transparent"
                 android:hint="Nama Pengguna"
+                android:clickable="true"
                 android:drawableLeft="@drawable/ic_person_black_24dp"/>
 
         </androidx.cardview.widget.CardView>
@@ -56,6 +57,7 @@
                 android:layout_margin="10dp"
                 android:background="@android:color/transparent"
                 android:hint="Kata Sandi"
+                android:clickable="true"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"/>
 
         </androidx.cardview.widget.CardView>
