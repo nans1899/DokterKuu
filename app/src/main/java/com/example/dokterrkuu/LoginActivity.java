@@ -52,62 +52,6 @@ public class LoginActivity extends AppCompatActivity {
                     user.setError("Please Fill The Empty Field(s) !!");
                     return;
                 }
-                else if(!username.contains("@") || !username.contains(".com")){
-                    FirebaseDatabase db = FirebaseDatabase.getInstance();
-                    DatabaseReference dbuser = db.getReference().child("Username");
-                   final DatabaseReference dbpass = db.getReference().child("Password");
-
-                    dbuser.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            String Username = dataSnapshot.getValue(String.class);
-                            final String namalog = user.getText().toString();
-
-                            if(namalog != Username){
-                                Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
-                            }else if(namalog==""){
-                                Toast.makeText(LoginActivity.this, "Please Fill The Empty Field(s)", Toast.LENGTH_SHORT).show();
-                            }
-                                else{
-
-                                    dbpass.addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                            String Password = dataSnapshot.getValue(String.class);
-                                            String passlog = pass.getText().toString();
-
-                                            if(passlog != Password){
-                                                Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
-                                            }else if(passlog == ""){
-                                                Toast.makeText(LoginActivity.this, "Please Fill The Empty Field(s)", Toast.LENGTH_SHORT).show();
-                                            }else{
-
-                                                intent.putExtra(EXTRA_TEXT, namalog);
-                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-
-                                            }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-
-                            }
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
-                }
-
-
-
                 else{
                     //AUTHENTICATION FIREBASE AUTO
 
