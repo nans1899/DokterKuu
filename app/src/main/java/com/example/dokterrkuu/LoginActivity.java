@@ -28,6 +28,9 @@ public class LoginActivity extends AppCompatActivity {
     Button log;
     FirebaseAuth firebaseAuth;
 
+    public static final String EXTRA_TEXT = "com.example.dokterrkuu.EXTRA_TEXT";
+    Intent intent =new Intent(this, MainActivity.class);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,22 +54,47 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else if(!username.contains("@") || !username.contains(".com")){
                     FirebaseDatabase db = FirebaseDatabase.getInstance();
-                    DatabaseReference dbref = db.getReference("Users");
+                    DatabaseReference dbuser = db.getReference().child("Username");
+                   final DatabaseReference dbpass = db.getReference().child("Password");
 
-                    dbref.addValueEventListener(new ValueEventListener() {
+                    dbuser.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             String Username = dataSnapshot.getValue(String.class);
-                            String Password = dataSnapshot.getValue(String.class);
-                            String namalog = user.getText().toString();
-                            String passlog = pass.getText().toString();
-                            if(namalog != Username || passlog != Password){
+                            final String namalog = user.getText().toString();
+
+                            if(namalog != Username){
                                 Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
-                            }else if(namalog=="" || passlog==""){
+                            }else if(namalog==""){
                                 Toast.makeText(LoginActivity.this, "Please Fill The Empty Field(s)", Toast.LENGTH_SHORT).show();
                             }
                                 else{
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                                    dbpass.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                            String Password = dataSnapshot.getValue(String.class);
+                                            String passlog = pass.getText().toString();
+
+                                            if(passlog != Password){
+                                                Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
+                                            }else if(passlog == ""){
+                                                Toast.makeText(LoginActivity.this, "Please Fill The Empty Field(s)", Toast.LENGTH_SHORT).show();
+                                            }else{
+
+                                                intent.putExtra(EXTRA_TEXT, namalog);
+                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                        }
+                                    });
+
                             }
 
                         }
