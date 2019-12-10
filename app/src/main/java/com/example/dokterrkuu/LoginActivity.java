@@ -22,6 +22,9 @@ public class LoginActivity extends AppCompatActivity {
     EditText user,pass;
     Button log;
     FirebaseAuth firebaseAuth;
+    Intent intent = new Intent(this, MainActivity.class);
+    public static final String EXTRA_TEXT ="com.example.dokterrkuu.EXTRA_TEXT";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = user.getText().toString();
+               final String username = user.getText().toString();
                 String password = pass.getText().toString();
 
                 if(TextUtils.isEmpty(username) || TextUtils.isEmpty(password)){
@@ -52,7 +55,8 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            intent.putExtra(EXTRA_TEXT, username);
+                            startActivity(intent);
                         }else{
                             Toast.makeText(LoginActivity.this, "Username Not Exist OR Wrong Credentials", Toast.LENGTH_SHORT).show();
                         }
