@@ -28,9 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     Button log;
     FirebaseAuth firebaseAuth;
 
-    public static final String EXTRA_TEXT = "com.example.dokterrkuu.EXTRA_TEXT";
-    Intent intent =new Intent(this, MainActivity.class);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
