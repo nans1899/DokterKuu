@@ -16,20 +16,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText user,pass;
     Button log;
     FirebaseAuth firebaseAuth;
-
-    public static final String EXTRA_TEXT = "com.example.dokterrkuu.EXTRA_TEXT";
-    Intent intent =new Intent(this, MainActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,22 +44,20 @@ public class LoginActivity extends AppCompatActivity {
                     user.setError("Please Fill The Empty Field(s) !!");
                     return;
                 }
-                else{
-                    //AUTHENTICATION FIREBASE AUTO
 
-                    firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            }else{
-                                Toast.makeText(LoginActivity.this, "Username Not Exist OR Wrong Credentials", Toast.LENGTH_SHORT).show();
-                            }
+                //AUTHENTICATION
+
+                firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }else{
+                            Toast.makeText(LoginActivity.this, "Username Not Exist OR Wrong Credentials", Toast.LENGTH_SHORT).show();
                         }
-                    });
-
-                }
+                    }
+                });
 
             }
         });
