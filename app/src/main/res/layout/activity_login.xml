@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    tools:context=".LoginActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_margin="25dp">
+
+        <TextView
+            android:id="@+id/Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#ffff"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginRight="250dp"
+            android:layout_marginBottom="220dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp">
+
+            <EditText
+                android:id="@+id/Username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="30dp"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:hint="Nama Pengguna"
+                android:drawableLeft="@drawable/ic_person_black_24dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp">
+
+            <EditText
+                android:id="@+id/Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="30dp"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:hint="Kata Sandi"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/LogButt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masuk"
+            android:background="#690505"
+            android:textColor="#ffffff"
+            android:layout_marginTop="220dp"/>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
