@@ -27,8 +27,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText user,pass;
     Button log;
     FirebaseAuth firebaseAuth;
-    public static final String EXTRA_TEXT = "com.example.dokterrkuu.EXTRA_TEXT";
-    Intent intent = new Intent(this, MainActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,38 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                     user.setError("Please Fill The Empty Field(s) !!");
                     return;
                 }
-                else if(!username.contains("@") || !username.contains(".com")){
-                    FirebaseDatabase db = FirebaseDatabase.getInstance();
-                    DatabaseReference dbref = db.getReference("Users");
-
-                    dbref.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            String Username = dataSnapshot.getValue(String.class);
-                            String Password = dataSnapshot.getValue(String.class);
-                            String namalog = user.getText().toString();
-                            String passlog = pass.getText().toString();
-                            if(namalog != Username || passlog != Password){
-                                Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
-                            }else if(namalog=="" || passlog==""){
-                                Toast.makeText(LoginActivity.this, "Please Fill The Empty Field(s)", Toast.LENGTH_SHORT).show();
-                            }
-                                else{
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            }
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
-                }
 
 
 
-                else{
+
                     //AUTHENTICATION FIREBASE AUTO
 
                     firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -90,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                intent.putExtra(EXTRA_TEXT, username);
+                                Intent intent = new Intent (LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(LoginActivity.this, "Username Not Exist OR Wrong Credentials", Toast.LENGTH_SHORT).show();
@@ -98,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
 
-                }
+
 
             }
         });
