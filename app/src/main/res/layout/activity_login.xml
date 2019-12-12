@@ -7,6 +7,18 @@
     android:background="@drawable/loginbg"
     tools:context=".LoginActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:src="@drawable/appslogo"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp"/>
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -70,6 +82,7 @@
             android:background="#690505"
             android:textColor="#ffffff"
             android:layout_marginTop="220dp"/>
+    </RelativeLayout>
 
 
     </RelativeLayout>
