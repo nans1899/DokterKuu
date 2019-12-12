@@ -49,10 +49,6 @@ public class LoginActivity extends AppCompatActivity {
                     user.setError("Please Fill The Empty Field(s) !!");
                     return;
                 }
-
-
-
-
                     //AUTHENTICATION FIREBASE AUTO
 
                     firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
