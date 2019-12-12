@@ -7,6 +7,17 @@
     android:background="@drawable/appointment"
     tools:context=".LoginActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:src="@drawable/appslogo"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="75dp"/>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,11 +30,10 @@
             android:layout_height="wrap_content"
             android:text="Buat Janji"
             android:textSize="40sp"
+            android:layout_marginTop="35dp"
             android:textStyle="bold"
             android:textColor="#ffff"
-            android:fontFamily="sans-serif-light"
-            android:layout_marginRight="250dp"
-            android:layout_marginBottom="220dp"/>
+            android:fontFamily="sans-serif-light"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -97,6 +107,8 @@
             android:background="#75635f"
             android:textColor="#ffffff"
             android:layout_marginTop="400dp"/>
+
+    </RelativeLayout>
 
 
     </RelativeLayout>
