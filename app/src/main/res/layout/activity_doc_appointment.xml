@@ -103,7 +103,7 @@
             android:id="@+id/LogButt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Buat Jnji"
+            android:text="Buat Janji"
             android:background="#75635f"
             android:textColor="#ffffff"
             android:layout_marginTop="400dp"/>
