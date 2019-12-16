@@ -1,6 +1,5 @@
 package com.example.dokterrkuu;
 
-import android.widget.Spinner;
 
 import java.util.Date;
 
@@ -8,13 +7,13 @@ public class AppointmentData {
 
     private String aName;
     private Date aDate;
-    private Spinner aDName;
-    private Spinner aDHospital;
+    private String aDName;
+    private String aDHospital;
 
     public AppointmentData() {
     }
 
-    public AppointmentData(String aName, Date aDate, Spinner aDName, Spinner aDHospital) {
+    public AppointmentData(String aName, Date aDate, String aDName, String aDHospital) {
         this.aName = aName;
         this.aDate = aDate;
         this.aDName = aDName;
@@ -37,19 +36,19 @@ public class AppointmentData {
         this.aDate = aDate;
     }
 
-    public Spinner getaDName() {
+    public String getaDName() {
         return aDName;
     }
 
-    public void setaDName(Spinner aDName) {
+    public void setaDName(String aDName) {
         this.aDName = aDName;
     }
 
-    public Spinner getaDHospital() {
+    public String getaDHospital() {
         return aDHospital;
     }
 
-    public void setaDHospital(Spinner aDHospital) {
+    public void setaDHospital(String aDHospital) {
         this.aDHospital = aDHospital;
     }
 }
