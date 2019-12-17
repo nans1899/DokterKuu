@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/appointment"
-    tools:context=".LoginActivity">
+    tools:context=".DocAppointment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:layout_marginTop="100dp">
 
             <EditText
-                android:id="@+id/Username"
+                android:id="@+id/UsernameDocAppointment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="30dp"
@@ -100,7 +100,7 @@
 
 
         <Button
-            android:id="@+id/LogButt"
+            android:id="@+id/JanjiButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Buat Janji"
