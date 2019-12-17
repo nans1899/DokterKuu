@@ -72,8 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:datePickerMode="calendar"
-            android:layout_marginVertical="240dp"
-            android:layout_marginTop="230dp"/>
+            android:layout_marginTop="240dp"/>
 
 
         <TextView
