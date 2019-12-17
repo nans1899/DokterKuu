@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eb8881"
     tools:context=".PengeheliatanActivity">
 
     <RelativeLayout
@@ -33,26 +34,92 @@
                 android:elevation="6dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="12dp"
+                android:layout_margin="12dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:padding="16dp"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/konjungtivitis"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/konjungtivitis"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
-                        android:text="Konjungtivitis"
+                        android:textStyle="bold"
+                        android:text="Konjungtivitis"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Penyakit mata ini terjadi ketika jaringan lunak di sekitar mata meradang dan membuat mata merah, berair, perih, dan gatal. Konjungtivitis dapat disebabkan oleh iritasi, alergi, atau infeksi. Jika disebabkan oleh infeksi bakteri, mata dapat menjadi bernanah. Kondisi ini adalah salah satu hal yang seringmembuat sakit mata pada anak dan orang dewasa."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Mata kering bisa ditangani dengan penggunaan obat tetes air mata (artificial tears), atau obat untuk meningkatkan produksi air mata. Selain itu, faktor penyebab mata kering juga perlu diidentifikasi dan diobati."/>
                 </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/matakering"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:text="Mata Kering"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="Mata kering bisa terjadi pada siapa saja, namun keluhan ini lebih sering dialami oleh lansia dan pada wanita. Penderita mata kering akan merasakan gejala berupa mata terasa berpasir atau seperti ada benda asing di mata, mata merah, terasa perih atau gatal, dan silau.
+Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, penyakit autoimun, infeksi, iritasi, alergi, kekurangan nutrisi, mata terlalu sering terpapar angin atau sinar matahari, hingga efek samping obat-obatan."/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:text="Penyembuhan"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="Jika disebabkan oleh infeksi virus, konjungtivitis dapat sembuh sendiri dalam beberapa hari. Sedangkan untuk konjungtivis yang disebabkan oleh infeksi bakteri, dibutuhkan pengobatan dengan obat tetes mata atau salep mata antibiotik."/>
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </GridLayout>
     </RelativeLayout>
 

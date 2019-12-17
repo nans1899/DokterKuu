@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         c_mata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent MataKlik = new Intent (MainActivity.this, SecondActivity.class);
+                Intent MataKlik = new Intent (MainActivity.this, PengeheliatanActivity.class);
                 startActivity(MataKlik);
             }
         });
