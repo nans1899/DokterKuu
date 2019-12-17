@@ -33,8 +33,6 @@ public class DocAppointment extends AppCompatActivity {
     Spinner dropdown2;
     DatabaseHelper databaseHelper;
     Date date;
-    String dValues1;
-    String dValues2;
     Calendar calendar;
     String formatDate;
     //AppointmentData appointmentData = new AppointmentData();
@@ -55,6 +53,7 @@ public class DocAppointment extends AppCompatActivity {
         dropdown = findViewById(R.id.spinner1);
         dropdown2 = findViewById(R.id.spinner2);
 
+        /*
         //GET DATEPICKER ID
         datePicker = (DatePicker) findViewById(R.id.tglReservasi);
 
@@ -68,6 +67,8 @@ public class DocAppointment extends AppCompatActivity {
         //CONVERTING TO SIMPLE DATE FORMAT STRING
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         formatDate = sdf.format(calendar.getTime());
+
+         */
 
         //THE DOCTORS
         final String[] items = new String[]{"Prof. Dr. dr. Harianto N", "Prof. Dr. DjokoSoemantri", "Prof. Dr. M. Hidayat", "Prof. Dr. Soetjipto", "Prof. Dr. Darwin Dalimunthe"};
@@ -116,9 +117,7 @@ public class DocAppointment extends AppCompatActivity {
             }
         });
 
-        //GET DROPDOWN VALUES
-        dValues1 = dropdown.getSelectedItem().toString();
-        dValues2 = dropdown2.getSelectedItem().toString();
+
 
         //METHOD FOR APPOINTMENT BUTTON
         AddData();
@@ -131,8 +130,12 @@ public class DocAppointment extends AppCompatActivity {
 
     public void AddData(){
         Janji.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                //GET DROPDOWN VALUES
+                String dValues1 = dropdown.getSelectedItem().toString();
+                String dValues2 = dropdown2.getSelectedItem().toString();
                 boolean isInserted = databaseHelper.insertData(uName.getText().toString(), dValues1, dValues2 );
 
                 if(isInserted =true){
