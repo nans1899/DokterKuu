@@ -30,10 +30,8 @@ public class DocAppointment extends AppCompatActivity {
     Spinner dropdown;
     Spinner dropdown2;
     DatabaseReference reference;
-    String docName;
 
-
-    AppointmentData appointmentData = new AppointmentData();
+    //AppointmentData appointmentData = new AppointmentData();
 
 
     @Override
@@ -42,9 +40,9 @@ public class DocAppointment extends AppCompatActivity {
         setContentView(R.layout.activity_doc_appointment);
 
         //GET UI ID'S
-        uName = (EditText) findViewById(R.id.Username);
+        uName = (EditText) findViewById(R.id.UsernameDocAppointment);
         Calendar = (Button) findViewById(R.id.TglButt);
-        Janji = (Button) findViewById(R.id.LogButt);
+        Janji = (Button) findViewById(R.id.JanjiButton);
 
         //GET SPINNER ID'S
         dropdown = findViewById(R.id.spinner1);
@@ -90,8 +88,6 @@ public class DocAppointment extends AppCompatActivity {
                     ArrayAdapter<String> adapter5=new ArrayAdapter<String>(DocAppointment.this, android.R.layout.simple_spinner_dropdown_item, drDarwin);
                     dropdown2.setAdapter(adapter5);
                 }
-
-                Toast.makeText(DocAppointment.this, ""+itemSelect, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -107,61 +103,18 @@ public class DocAppointment extends AppCompatActivity {
         dropdown2.setAdapter(adapter2);
         */
 
-
-        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String itemSelect = items[position];
-                if(position == 0){
-                    docName = "Prof. Dr. dr. Harianto N";
-                }
-                if(position == 1){
-                    docName = "Prof. Dr. DjokoSoemantri";
-                }
-                if(position == 2){
-                    docName = "Prof. Dr. M. Hidayat";
-                }
-                if(position == 3){
-                    docName = "Prof. Dr. Soetjipto";
-                }
-                if(position == 4){
-                    docName = "Prof. Dr. Darwin Dalimunthe";
-                }
-
-                appointmentData.setaDName(docName);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
         Janji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String sName = uName.getText().toString();
-                String dName;
-                String location;
-
-                dName = dropdown.getOnItemSelectedListener().toString();
-                location = dropdown2.getOnItemSelectedListener().toString();
-
 
                 reference = FirebaseDatabase.getInstance().getReference().child("Appointment").child("Data");
-
-                getValue();
 
                 if(sName.equals("")){
                     Toast.makeText(DocAppointment.this, "Data Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
                 }else{
-
-                    reference.child("Data").push().setValue(uName.getText().toString());
-                    reference.child("Data").push().setValue(dName);
-                    reference.child("Data").push().setValue(location);
+                    reference.child("Data").push().setValue(sName);
                     uName.setText("");
                     Toast.makeText(DocAppointment.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
                 }
@@ -171,11 +124,15 @@ public class DocAppointment extends AppCompatActivity {
 
     }
 
+
+/*
     private void getValue(){
 
         appointmentData.setaName(uName.getText().toString());
 
     }
+
+ */
 
 
 
