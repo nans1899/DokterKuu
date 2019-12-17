@@ -133,7 +133,7 @@ public class DocAppointment extends AppCompatActivity {
         Janji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), formatDate, dValues1, dValues2 );
+                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), dValues1, dValues2 );
 
                 if(isInserted =true){
                     Toast.makeText(DocAppointment.this, "Data Successfuly Inserted", Toast.LENGTH_SHORT).show();
