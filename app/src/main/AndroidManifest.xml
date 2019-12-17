@@ -12,7 +12,6 @@
         <activity android:name=".PernafasanActivity"></activity>
         <activity android:name=".GigiActivity" />
         <activity android:name=".PengeheliatanActivity" />
-        <activity android:name=".DocRegist" />
         <activity android:name=".DocAppointment" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
