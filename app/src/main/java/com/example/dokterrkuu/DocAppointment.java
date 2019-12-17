@@ -19,6 +19,7 @@ import java.sql.Date;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -27,19 +28,22 @@ public class DocAppointment extends AppCompatActivity {
 
     //INITIATE VARIABLES
     EditText uName;
-    Button Calendar,Janji;
-    Date Calendar1;
+    Button Janji;
+    DatePicker datePicker;
     Spinner dropdown;
     Spinner dropdown2;
-    DatabaseReference reference;
     DatabaseHelper databaseHelper;
+    Date date;
+    String dValues1;
+    String dValues2;
     //AppointmentData appointmentData = new AppointmentData();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_appointment);
+
+        //CALLING DATABASEHELPER
         databaseHelper = new DatabaseHelper(this);
 
         //GET UI ID'S
@@ -49,6 +53,27 @@ public class DocAppointment extends AppCompatActivity {
         //GET SPINNER ID'S
         dropdown = findViewById(R.id.spinner1);
         dropdown2 = findViewById(R.id.spinner2);
+
+        //GET DATEPICKER ID
+        datePicker = (DatePicker) findViewById(R.id.tglReservasi);
+
+        //GET DATEPICKER VALUES
+        int day = datePicker.getDayOfMonth();
+        int month = datePicker.getMonth();
+        int year = datePicker.getYear();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(day, month, year);
+
+        //CONVERTING TO SIMPLE DATE FORMAT STRING
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String formatDate = sdf.format(calendar.getTime());
+
+        //CONVERTING BACK TO DATE
+        try {
+            date = (Date) sdf.parse(formatDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         //THE DOCTORS
         final String[] items = new String[]{"Prof. Dr. dr. Harianto N", "Prof. Dr. DjokoSoemantri", "Prof. Dr. M. Hidayat", "Prof. Dr. Soetjipto", "Prof. Dr. Darwin Dalimunthe"};
@@ -65,7 +90,6 @@ public class DocAppointment extends AppCompatActivity {
         dropdown.setAdapter(adapter);
 
         //AUTO POPULATE FROM FIRST PICK
-
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -98,23 +122,37 @@ public class DocAppointment extends AppCompatActivity {
             }
         });
 
-        //INI YANG MANUAL
-        /*
-        String[] items2 = new String[]{"Rs MMC", "Rs Pertamina", "Rs Cipto Mangunkusumo", "Rs AL Minthohardjo", "Rs Pelni"};
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items2);
-        dropdown2.setAdapter(adapter2);
-        */
+        //GET DROPDOWN VALUES
+        dValues1 = dropdown.getSelectedItem().toString();
+        dValues2 = dropdown2.getSelectedItem().toString();
 
-
-
-
+        //METHOD FOR APPOINTMENT BUTTON
+        AddData();
 
     }
 
 
 
+    public void AddData(){
+        Janji.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), date, dValues1, dValues2 );
 
+                if(isInserted =true){
+                    Toast.makeText(DocAppointment.this, "Data Successfuly Inserted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(DocAppointment.this, "Failed Inserting The Data", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
-
+    //INI YANG MANUAL MASUKINNYA DI ONCREATE HARUSNYA
+        /*
+        String[] items2 = new String[]{"Rs MMC", "Rs Pertamina", "Rs Cipto Mangunkusumo", "Rs AL Minthohardjo", "Rs Pelni"};
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items2);
+        dropdown2.setAdapter(adapter2);
+        */
 
 }
