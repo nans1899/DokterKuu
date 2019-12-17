@@ -14,6 +14,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import java.sql.Date;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,10 +28,11 @@ public class DocAppointment extends AppCompatActivity {
     //INITIATE VARIABLES
     EditText uName;
     Button Calendar,Janji;
+    Date Calendar1;
     Spinner dropdown;
     Spinner dropdown2;
     DatabaseReference reference;
-
+    DatabaseHelper databaseHelper;
     //AppointmentData appointmentData = new AppointmentData();
 
 
@@ -38,6 +40,7 @@ public class DocAppointment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_appointment);
+        databaseHelper = new DatabaseHelper(this);
 
         //GET UI ID'S
         uName = (EditText) findViewById(R.id.UsernameDocAppointment);
@@ -102,36 +105,14 @@ public class DocAppointment extends AppCompatActivity {
         dropdown2.setAdapter(adapter2);
         */
 
-        Janji.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                String sName = uName.getText().toString();
 
-                reference = FirebaseDatabase.getInstance().getReference().child("Appointment").child("Data");
 
-                if(sName.equals("")){
-                    Toast.makeText(DocAppointment.this, "Data Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
-                }else{
-                    reference.child("Data").push().setValue(sName);
-                    uName.setText("");
-                    Toast.makeText(DocAppointment.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
 
     }
 
 
-/*
-    private void getValue(){
 
-        appointmentData.setaName(uName.getText().toString());
-
-    }
-
- */
 
 
 
