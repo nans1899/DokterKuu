@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.DownloadManager;
+import android.content.ContentValues;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,12 +15,16 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import java.sql.Date;
 
+
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.MonthDay;
+import java.time.Year;
 import java.util.Calendar;
-import java.util.Locale;
+
 
 public class DocAppointment extends AppCompatActivity {
 
@@ -33,6 +38,7 @@ public class DocAppointment extends AppCompatActivity {
     Date date;
     String dValues1;
     String dValues2;
+    Calendar calendar;
     //AppointmentData appointmentData = new AppointmentData();
 
     @Override
@@ -58,12 +64,11 @@ public class DocAppointment extends AppCompatActivity {
         int day = datePicker.getDayOfMonth();
         int month = datePicker.getMonth();
         int year = datePicker.getYear();
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(day, month, year);
+      Date datevalue =  onDataSet(datePicker, day, month, year);
 
         //CONVERTING TO SIMPLE DATE FORMAT STRING
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String formatDate = sdf.format(calendar.getTime());
+        String formatDate = sdf.format(datevalue);
 
         //CONVERTING BACK TO DATE
         try {
@@ -123,10 +128,27 @@ public class DocAppointment extends AppCompatActivity {
         dValues1 = dropdown.getSelectedItem().toString();
         dValues2 = dropdown2.getSelectedItem().toString();
 
+
         //METHOD FOR APPOINTMENT BUTTON
         AddData();
 
     }
+
+  public Date onDataSet(DatePicker view, int Year, int monthOfYear, int dayOfMonth){
+        calendar.set(dayOfMonth, monthOfYear, Year);
+
+        int day = dayOfMonth;
+        int month = monthOfYear;
+        int year = Year;
+
+      ContentValues values = new ContentValues();
+
+      values.put("Day", dayOfMonth);
+      values.put("Month", monthOfYear);
+      values.put("Year", Year);
+
+      return onDataSet(view, Year, monthOfYear, dayOfMonth);
+  }
 
 
 
