@@ -329,39 +329,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/bayi"
-                        android:layout_width="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Poli Anak"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
 
 
