@@ -16,9 +16,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import java.sql.Date;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
