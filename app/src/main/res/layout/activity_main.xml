@@ -109,6 +109,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/gigiklik"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:background="?attr/selectableItemBackground"
