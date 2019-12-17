@@ -17,6 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_3 = "docName";
     public static final String COL_4 = "hospital";
 
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
         SQLiteDatabase db = this.getWritableDatabase();
