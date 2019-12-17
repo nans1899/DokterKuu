@@ -111,7 +111,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/LogButt"
+            android:id="@+id/RegButt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Masuk"
