@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#dfe0f5"
-    tools:context=".PengeheliatanActivity">
+    tools:context=".GigiActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/gambarmata"
-        android:layout_width="wrap_content"
-        android:layout_height="265dp"
-        android:src="@drawable/matacontent"/>
+        <ImageView
+            android:id="@+id/gambarmata"
+            android:layout_width="wrap_content"
+            android:layout_height="265dp"
+            android:src="@drawable/gigicontent"/>
 
         <GridLayout
             android:id="@+id/cardcard"
@@ -46,19 +46,19 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/konjungtivitis"/>
+                        android:src="@drawable/gigilubang"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
                         android:textStyle="bold"
-                        android:text="Konjungtivitis"/>
+                        android:text="Gigi Berlubang"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Penyakit mata ini terjadi ketika jaringan lunak di sekitar mata meradang dan membuat mata merah, berair, perih, dan gatal. Konjungtivitis dapat disebabkan oleh iritasi, alergi, atau infeksi. Jika disebabkan oleh infeksi bakteri, mata dapat menjadi bernanah. Kondisi ini adalah salah satu hal yang seringmembuat sakit mata pada anak dan orang dewasa."/>
+                        android:text="Gigi berlubang adalah masalah gigi yang paling sering dialami hampir semua orang sehingga dianggap biasa. Padahal, jika gigi berlubang diabaikan hingga parah, akhirnya bisa berakibat fatal alias menyebabkan kematian. Gigi berlubang disebabkan oleh banyaknya bakteri yang berkembang biak di mulut Anda. Bakteri ini menghasilkan asam yang dapat mengikis lapisan gigi sehingga gigi menjadi berlubang."/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -71,57 +71,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Mata kering bisa ditangani dengan penggunaan obat tetes air mata (artificial tears), atau obat untuk meningkatkan produksi air mata. Selain itu, faktor penyebab mata kering juga perlu diidentifikasi dan diobati."/>
+                        android:text="Gigi Berlubang dapat disembuhkan dengan ditambal oleh dokter spesialis gigi"/>
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                android:elevation="6dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/matakering"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    android:text="Mata Kering"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:text="Mata kering bisa terjadi pada siapa saja, namun keluhan ini lebih sering dialami oleh lansia dan pada wanita. Penderita mata kering akan merasakan gejala berupa mata terasa berpasir atau seperti ada benda asing di mata, mata merah, terasa perih atau gatal, dan silau.
-Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, penyakit autoimun, infeksi, iritasi, alergi, kekurangan nutrisi, mata terlalu sering terpapar angin atau sinar matahari, hingga efek samping obat-obatan."/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    android:text="Penyembuhan"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:text="Jika disebabkan oleh infeksi virus, konjungtivitis dapat sembuh sendiri dalam beberapa hari. Sedangkan untuk konjungtivis yang disebabkan oleh infeksi bakteri, dibutuhkan pengobatan dengan obat tetes mata atau salep mata antibiotik."/>
-            </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -142,19 +94,19 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/katarak"/>
+                        android:src="@drawable/perioontitis"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
                         android:textStyle="bold"
-                        android:text="Katarak"/>
+                        android:text="Periodontis (penyakit gusi)"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Penyakit mata ini membuat lensa mata terlihat keruh sehingga pandangan menjadi kabur. Katarak kebanyakan diderita oleh orang berusia 60 tahun ke atas. Namun pada beberapa kasus, katarak dapat terjadi pada usia yang lebih muda, bahkan pada bayi baru lahir."/>
+                        android:text="Periodontitis merupakan infeksi gusi parah yang dapat menyebabkan kerusakan pada jaringan lunak dan tulang penyangga gigi. Kondisi ini tidak boleh dianggap enteng dan harus segera diobati. Selain bisa menyebabkan kerontokan gigi, bakteri yang ada di dalam jaringan gusi juga bisa masuk ke aliran darah dan menyerang organ tubuh lainnya, misalnya paru-paru dan jantung"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -167,7 +119,7 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Katarak dapat disembuhkan melalui operasi pengangkatan katarak"/>
+                        android:text="Diambil tindakan operasi untuk meredakan gejala oleh dokter ahli gigi."/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -189,19 +141,19 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/glaukoma"/>
+                        android:src="@drawable/gingivitis"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
                         android:textStyle="bold"
-                        android:text="Glaukoma"/>
+                        android:text="Gingivitis"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Di Indonesia, glaukoma diperkirakan diderita oleh sekitar 6 juta orang. Glaukoma terjadi ketika saraf optik mata rusak sehingga penderitanya mengalami gangguan penglihatan, bahkan kebutaan. Kerusakan saraf optik tersebut disebabkan oleh peningkatan tekanan di dalam bola mata akibat adanya timbunan cairan di dalam mata."/>
+                        android:text="Gingivitis atau radang gusi adalah inflamasi atau peradangan yang terjadi pada gusi. Gingivitis bisa menjadi kondisi yang ringan, Anda mungkin tidak menyadari jika Anda memiliki kondisi ini. Namun, penting untuk segera mengatasi gingivitis karena jika dibiarkan, penyakit ini dapat menyebabkan periodontitis yang jauh lebih serius, mengakibatkan kehilangan gigi."/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -214,7 +166,54 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Pengobatannya bisa dengan obat minum atau obat tetes mata untuk mengurangi tekanan di dalam bola mata. Langkah pengobatan lainnya bisa dengan operasi, baik operasi laser maupun operasi mata konvensional."/>
+                        android:text="Diambil tindakan operasi untuk meredakan gejala oleh dokter ahli gigi."/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/karanggigi"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Plak gigi"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Plak gigi adalah adanya bakteri atau kotoran yang menempel dan hidup di dalam rongga mulut akibat sisa makanan pada gigi. Jika dibiarkan, plak pada gigi yang semula berwarna kuning akan semakin mengeras dan menghitam, sehingga akan terlihat seperti batu karang yang menempel pada gigi."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Ketika plak pada gigi sudah mengeras dan menjadi karang, kondisi tersebut tidak dapat diatasi hanya dengan menggosok gigi. Untuk mengatasi kondisi tersebut, dokter akan menganjurkan scaling gigi."/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -246,3 +245,4 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
 
 
 </ScrollView>
+

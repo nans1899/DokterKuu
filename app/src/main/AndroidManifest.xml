@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PengeheliatanActivity"></activity>
+        <activity android:name=".PernafasanActivity"></activity>
+        <activity android:name=".GigiActivity" />
+        <activity android:name=".PengeheliatanActivity" />
         <activity android:name=".DocRegist" />
         <activity android:name=".DocAppointment" />
         <activity android:name=".MainActivity" />

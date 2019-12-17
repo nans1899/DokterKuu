@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#dfe0f5"
-    tools:context=".PengeheliatanActivity">
+    tools:context=".PernafasanActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/gambarmata"
-        android:layout_width="wrap_content"
-        android:layout_height="265dp"
-        android:src="@drawable/matacontent"/>
+        <ImageView
+            android:id="@+id/gambarmata"
+            android:layout_width="wrap_content"
+            android:layout_height="265dp"
+            android:src="@drawable/pernafasancontent"/>
 
         <GridLayout
             android:id="@+id/cardcard"
@@ -46,19 +46,19 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/konjungtivitis"/>
+                        android:src="@drawable/asma"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
                         android:textStyle="bold"
-                        android:text="Konjungtivitis"/>
+                        android:text="Asma"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Penyakit mata ini terjadi ketika jaringan lunak di sekitar mata meradang dan membuat mata merah, berair, perih, dan gatal. Konjungtivitis dapat disebabkan oleh iritasi, alergi, atau infeksi. Jika disebabkan oleh infeksi bakteri, mata dapat menjadi bernanah. Kondisi ini adalah salah satu hal yang seringmembuat sakit mata pada anak dan orang dewasa."/>
+                        android:text="Asma disebabkan oleh penyempitan saluran napas. Sesak napas menjadi tanda umum dari penyakit ini. Biasanya sesak napas dibarengi oleh mengi (wheezing) yang merupakan suara khas bernada tinggi saat pasien mengeluarkan napas."/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -71,57 +71,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Mata kering bisa ditangani dengan penggunaan obat tetes air mata (artificial tears), atau obat untuk meningkatkan produksi air mata. Selain itu, faktor penyebab mata kering juga perlu diidentifikasi dan diobati."/>
+                        android:text="Gejala sesak nafas asma dapat dikurangi dengan menghisap inhaler yang berisikan oba khusus"/>
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                android:elevation="6dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/matakering"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    android:text="Mata Kering"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:text="Mata kering bisa terjadi pada siapa saja, namun keluhan ini lebih sering dialami oleh lansia dan pada wanita. Penderita mata kering akan merasakan gejala berupa mata terasa berpasir atau seperti ada benda asing di mata, mata merah, terasa perih atau gatal, dan silau.
-Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, penyakit autoimun, infeksi, iritasi, alergi, kekurangan nutrisi, mata terlalu sering terpapar angin atau sinar matahari, hingga efek samping obat-obatan."/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    android:text="Penyembuhan"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:text="Jika disebabkan oleh infeksi virus, konjungtivitis dapat sembuh sendiri dalam beberapa hari. Sedangkan untuk konjungtivis yang disebabkan oleh infeksi bakteri, dibutuhkan pengobatan dengan obat tetes mata atau salep mata antibiotik."/>
-            </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -142,19 +94,19 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/katarak"/>
+                        android:src="@drawable/pneumonia"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
                         android:textStyle="bold"
-                        android:text="Katarak"/>
+                        android:text="Pneumonia"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Penyakit mata ini membuat lensa mata terlihat keruh sehingga pandangan menjadi kabur. Katarak kebanyakan diderita oleh orang berusia 60 tahun ke atas. Namun pada beberapa kasus, katarak dapat terjadi pada usia yang lebih muda, bahkan pada bayi baru lahir."/>
+                        android:text="Pneumonia, atau yang biasa disebut dengan radang paru-paru, merupakan peradangan akibat infeksi. Batuk berdahak, demam, dan sesak napas adalah gejala umum dari pneumonia. Ciri lain dari penyakit ini adalah dahak kental yang dapat berwarna kuning, hijau, cokelat, atau bernoda darah."/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -167,7 +119,7 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Katarak dapat disembuhkan melalui operasi pengangkatan katarak"/>
+                        android:text="Pada kasus pneumonia yang masih tergolong ringan, pengidap tidak perlu dirawat di rumah sakit. Pengobatan bisa dilakukan sendiri di rumah dengan mengonsumsi antibiotik yang diresepkan oleh dokter serta banyak beristirahat dan minum. Pada kasus pneumonia yang sudah parah, pengidap perlu dirawat inap di rumah sakit untuk mendapatkan pengobatan medis. Di rumah sakit, pengidap akan diberikan antibiotik dan cairan tubuh lewat infus, serta oksigen untuk membantu pernapasan. "/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -189,19 +141,19 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/glaukoma"/>
+                        android:src="@drawable/bronkitis"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
                         android:textStyle="bold"
-                        android:text="Glaukoma"/>
+                        android:text="Bronkitis"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Di Indonesia, glaukoma diperkirakan diderita oleh sekitar 6 juta orang. Glaukoma terjadi ketika saraf optik mata rusak sehingga penderitanya mengalami gangguan penglihatan, bahkan kebutaan. Kerusakan saraf optik tersebut disebabkan oleh peningkatan tekanan di dalam bola mata akibat adanya timbunan cairan di dalam mata."/>
+                        android:text="Bronkitis adalah peradangan pada bronkus, yang merupakan saluran udara dari dan ke paru-paru. Bronkitis umumnya dicirikan dengan batuk berdahak yang kadang dahaknya bisa berubah warna."/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -214,7 +166,54 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Pengobatannya bisa dengan obat minum atau obat tetes mata untuk mengurangi tekanan di dalam bola mata. Langkah pengobatan lainnya bisa dengan operasi, baik operasi laser maupun operasi mata konvensional."/>
+                        android:text="Bronkitis ringan dapat hilang dengan sendirinya. Namun jika kondisinya cukup berat, bronkitis harus diatasi dengan obat-obatan. Untuk membantu pengobatan, disarankan untuk banyak minum air putih dan istirahat yang cukup."/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/laringitis"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Laringitis"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Laringitis adalah gangguan pernapasan yang menyerang laring atau pita suara. Peradangan yang terjadi biasanya disebabkan oleh penggunaan pita suara berlebihan, iritasi, atau infeksi pada laring. Suara serak atau parau bahkan hilang sama sekali adalah gejala umum yang muncul jika seseorang mengalami laringitis."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Kebanyakan laringitis bisa pulih sendiri dalam waktu sekitar satu minggu, tanpa obat-obatan. Tujuan pengobatan adalah untuk meredakan gejala yang mengganggu dan mempercepat kesembuhan."/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -242,7 +241,5 @@ Faktor penyebabnya bisa bermacam-macam, mulai dari kurangnya produksi air mata, 
             android:textSize="20dp"/>
 
     </RelativeLayout>
-
-
 
 </ScrollView>

@@ -114,6 +114,25 @@
             android:layout_below="@+id/pilihrs"
             android:spinnerMode="dropdown"/>
 
+        <TextView
+            android:id="@+id/pilihspes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih Spesialis"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/spinner2"
+            android:textSize="18sp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif-light/"/>
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_below="@+id/pilihspes"
+            android:spinnerMode="dropdown"/>
+
 
         <Button
             android:id="@+id/JanjiButton"
@@ -122,7 +141,7 @@
             android:text="Buat Janji"
             android:background="#75635f"
             android:textColor="#ffffff"
-            android:layout_below="@+id/spinner2"/>
+            android:layout_below="@+id/spinner3"/>
 
     </RelativeLayout>
 
