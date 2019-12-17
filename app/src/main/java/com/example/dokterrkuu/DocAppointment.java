@@ -20,9 +20,6 @@ import android.widget.Toast;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
-import java.time.MonthDay;
-import java.time.Year;
 import java.util.Calendar;
 
 
@@ -39,6 +36,7 @@ public class DocAppointment extends AppCompatActivity {
     String dValues1;
     String dValues2;
     Calendar calendar;
+    String formatDate;
     //AppointmentData appointmentData = new AppointmentData();
 
     @Override
@@ -64,18 +62,12 @@ public class DocAppointment extends AppCompatActivity {
         int day = datePicker.getDayOfMonth();
         int month = datePicker.getMonth();
         int year = datePicker.getYear();
-      Date datevalue =  onDataSet(datePicker, day, month, year);
+        calendar = Calendar.getInstance();
+        calendar.set(day, month, year);
 
         //CONVERTING TO SIMPLE DATE FORMAT STRING
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String formatDate = sdf.format(datevalue);
-
-        //CONVERTING BACK TO DATE
-        try {
-            date = (Date) sdf.parse(formatDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        formatDate = sdf.format(calendar.getTime());
 
         //THE DOCTORS
         final String[] items = new String[]{"Prof. Dr. dr. Harianto N", "Prof. Dr. DjokoSoemantri", "Prof. Dr. M. Hidayat", "Prof. Dr. Soetjipto", "Prof. Dr. Darwin Dalimunthe"};
@@ -128,27 +120,12 @@ public class DocAppointment extends AppCompatActivity {
         dValues1 = dropdown.getSelectedItem().toString();
         dValues2 = dropdown2.getSelectedItem().toString();
 
-
         //METHOD FOR APPOINTMENT BUTTON
         AddData();
 
     }
 
-  public Date onDataSet(DatePicker view, int Year, int monthOfYear, int dayOfMonth){
-        calendar.set(dayOfMonth, monthOfYear, Year);
 
-        int day = dayOfMonth;
-        int month = monthOfYear;
-        int year = Year;
-
-      ContentValues values = new ContentValues();
-
-      values.put("Day", dayOfMonth);
-      values.put("Month", monthOfYear);
-      values.put("Year", Year);
-
-      return onDataSet(view, Year, monthOfYear, dayOfMonth);
-  }
 
 
 
@@ -156,7 +133,7 @@ public class DocAppointment extends AppCompatActivity {
         Janji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), date, dValues1, dValues2 );
+                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), formatDate, dValues1, dValues2 );
 
                 if(isInserted =true){
                     Toast.makeText(DocAppointment.this, "Data Successfuly Inserted", Toast.LENGTH_SHORT).show();

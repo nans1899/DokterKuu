@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("create table " + TABLE_NAME + " (Username TEXT PRIMARY KEY, Date DATE, docName TEXT, Hospital TEXT)");
+        db.execSQL("create table " + TABLE_NAME + " (Username TEXT PRIMARY KEY, Date TEXT, docName TEXT, Hospital TEXT)");
 
     }
 
@@ -36,11 +36,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name, Date Date, String docname, String hospital){
+    public boolean insertData(String name, String Date, String docname, String hospital){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, name);
-        contentValues.put(COL_2, Date.toString());
+        contentValues.put(COL_2, Date);
         contentValues.put(COL_3, docname);
         contentValues.put(COL_4, hospital);
         long result = db.insert(TABLE_NAME, null, contentValues);
