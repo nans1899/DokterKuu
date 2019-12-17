@@ -27,7 +27,7 @@
                 android:id="@+id/txtdashboard"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
-                android:text="Apa Keluhanmu Hari Ini"
+                android:text="Apa Keluhanmu Hari Ini?"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

@@ -41,7 +41,6 @@ public class DocAppointment extends AppCompatActivity {
 
         //GET UI ID'S
         uName = (EditText) findViewById(R.id.UsernameDocAppointment);
-        Calendar = (Button) findViewById(R.id.TglButt);
         Janji = (Button) findViewById(R.id.JanjiButton);
 
         //GET SPINNER ID'S

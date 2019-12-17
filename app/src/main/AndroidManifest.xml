@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DocRegist"></activity>
+        <activity android:name=".PengeheliatanActivity"></activity>
+        <activity android:name=".DocRegist" />
         <activity android:name=".DocAppointment" />
-        <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

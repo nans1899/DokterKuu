@@ -15,7 +15,7 @@
         android:layout_width="82dp"
         android:layout_height="82dp"
         android:src="@drawable/appslogo"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"/>
 
 
@@ -70,6 +70,7 @@
                 android:background="@android:color/transparent"
                 android:hint="Kata Sandi"
                 android:clickable="true"
+                android:inputType="textPassword"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"/>
 
         </androidx.cardview.widget.CardView>
