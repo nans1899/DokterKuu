@@ -34,7 +34,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         try{
 
-            db.execSQL("create table UsersAppointment (Username VARCHAR(255) PRIMARY KEY, Date VARCHAR(255), disease VARCHAR(255),docName VARCHAR(255), Hospital TEXT, Notes TEXT)");
+            String CREATE_APPOINTMENT_TABLE = "CREATE TABLE "+
+                    TABLE_NAME + "(" + COL_1
+                    + " VARCHAR(255) PRIMARY KEY," + COL_2
+                    + " VARCHAR(255)," + COL_3
+                    + " VARCHAR(255)," + COL_4
+                    + " VARCHAR(255)," + COL_5
+                    +" TEXT," + COL_6
+                    + " TEXT" + ")";
+
+            db.execSQL(CREATE_APPOINTMENT_TABLE);
             Toast.makeText(context, "Table Created Successfuly", Toast.LENGTH_SHORT).show();
 
         }catch(Exception e){
@@ -57,14 +66,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_4, docname);
         contentValues.put(COL_5, hospital);
         contentValues.put(COL_6, notes);
-        long result = db.insert(""+TABLE_NAME, null, contentValues);
+        long result = db.insert(TABLE_NAME, null, contentValues);
 
-        if(result == -1){
-            return false;
-        }else{
-            db.close();
-            return true;
-        }
+        db.close();
+        return true;
 
     }
 
