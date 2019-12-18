@@ -48,6 +48,7 @@ public class ShowAppointment extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.ListAppointmnet);
         objModelClassArrayList = new ArrayList<>();
 
+        updateButton();
     }
 
     public void showValueFromDatabase(View view){
@@ -80,7 +81,7 @@ public class ShowAppointment extends AppCompatActivity {
 
                     View singlerow = getLayoutInflater().inflate(R.layout.single_row, null);
 
-                    diseasetype = (TextView) singlerow.findViewById(R.id.viewDisease);
+                    String diseasevalue = cursor.getString(2);
                     spinner1 = (Spinner) singlerow.findViewById(R.id.spinnerDocName);
                     spinner2 = (Spinner) singlerow.findViewById(R.id.spinnerHospital);
 
@@ -108,7 +109,7 @@ public class ShowAppointment extends AppCompatActivity {
                     final String[] drEnrique={"Rs Al Minthohardjo","Rs Pertamina","Rs Hermina Tanjung Priok"};
                     final String[] drDaniel={"Hospital Tanggerang","Rs Pelni","Rs MMC"};
 
-                    if(diseasetype.getText()=="Penglihatan"){
+                    if(diseasevalue=="Penglihatan"){
                         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Penglihatan);
                         spinner1.setAdapter(adapter);
                         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -136,7 +137,7 @@ public class ShowAppointment extends AppCompatActivity {
                         });
                     }
 
-                    if(diseasetype.getText()=="Kesehatan Gigi"){
+                    if(diseasevalue=="Kesehatan Gigi"){
                         ArrayAdapter<String> adapterfromSC2 = new ArrayAdapter<String>(ShowAppointment.this, android.R.layout.simple_spinner_dropdown_item, Kesehatangigi );
                         spinner1.setAdapter(adapterfromSC2);
 
@@ -164,7 +165,7 @@ public class ShowAppointment extends AppCompatActivity {
                             }
                         });
                     }
-                    if(diseasetype.getText()=="Pernafasan"){
+                    if(diseasevalue=="Pernafasan"){
                         ArrayAdapter<String> adapterfromSC3 = new ArrayAdapter<String>(ShowAppointment.this, android.R.layout.simple_spinner_dropdown_item, Pernafasan );
                         spinner1.setAdapter(adapterfromSC3);
 
@@ -192,7 +193,7 @@ public class ShowAppointment extends AppCompatActivity {
                             }
                         });
                     }
-                    if(diseasetype.getText()=="Lambung"){
+                    if(diseasevalue=="Lambung"){
                         ArrayAdapter<String> adapterfromSC4 = new ArrayAdapter<String>(ShowAppointment.this, android.R.layout.simple_spinner_dropdown_item, Lambung );
                         spinner1.setAdapter(adapterfromSC4);
 
@@ -225,7 +226,7 @@ public class ShowAppointment extends AppCompatActivity {
                         });
 
                     }
-                    if(diseasetype.getText()=="Sakit Kepala"){
+                    if(diseasevalue=="Sakit Kepala"){
                         ArrayAdapter<String> adapterfromSC5 = new ArrayAdapter<String>(ShowAppointment.this, android.R.layout.simple_spinner_dropdown_item, SakitKepala );
                         spinner1.setAdapter(adapterfromSC5);
 
@@ -255,7 +256,7 @@ public class ShowAppointment extends AppCompatActivity {
                         });
 
                     }
-                    if(diseasetype.getText()=="Kesehatan Jantung"){
+                    if(diseasevalue=="Kesehatan Jantung"){
                         ArrayAdapter<String> adapterfromSC6 = new ArrayAdapter<String>(ShowAppointment.this, android.R.layout.simple_spinner_dropdown_item, KesehatanJantung );
                         spinner1.setAdapter(adapterfromSC6);
 
@@ -283,7 +284,7 @@ public class ShowAppointment extends AppCompatActivity {
                             }
                         });
                     }
-                    if(diseasetype.getText()=="Pendengaran"){
+                    if(diseasevalue=="Pendengaran"){
                         ArrayAdapter<String> adapterfromSC7 = new ArrayAdapter<String>(ShowAppointment.this, android.R.layout.simple_spinner_dropdown_item, Pendengaran);
                         spinner1.setAdapter(adapterfromSC7);
 
@@ -312,7 +313,7 @@ public class ShowAppointment extends AppCompatActivity {
                             }
                         });
                     }
-                    if(diseasetype.getText()=="Tulang"){
+                    if(diseasevalue=="Tulang"){
                         ArrayAdapter<String> adapterfromSC8 = new ArrayAdapter<String>(ShowAppointment.this, android.R.layout.simple_spinner_dropdown_item, Tulang);
                         spinner1.setAdapter(adapterfromSC8);
 
@@ -345,9 +346,6 @@ public class ShowAppointment extends AppCompatActivity {
                         });
                     }
 
-
-
-
                 }
             }else{
                 Toast.makeText(this, "Database Not Found or Null", Toast.LENGTH_SHORT).show();
@@ -357,10 +355,15 @@ public class ShowAppointment extends AppCompatActivity {
             Toast.makeText(this, "Failed to Show Value Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-    public void updateButton(View view){
+    public void updateButton(){
         databaseHelper = new DatabaseHelper(this);
+        final View singlerow = getLayoutInflater().inflate(R.layout.single_row, null);
+        Button updateto = (Button) singlerow.findViewById(R.id.buttonUpdate);
+
+        updateto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Date date;
-                View singlerow = getLayoutInflater().inflate(R.layout.single_row, null);
 
                 spinner1 = (Spinner) singlerow.findViewById(R.id.spinnerDocName);
                 spinner2 = (Spinner) singlerow.findViewById(R.id.spinnerHospital);
@@ -375,6 +378,7 @@ public class ShowAppointment extends AppCompatActivity {
                 DatePicker datePicker = (DatePicker) findViewById(R.id.tglReservasi);
                 date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
                 String valuedate = date.toString();
+
                 boolean isUpdated = databaseHelper.updateData(uName.getText().toString(),
                         valuedate, diseasetype.getText().toString(),
                         dValues1, dValues2,
@@ -384,7 +388,11 @@ public class ShowAppointment extends AppCompatActivity {
                 }else{
                     Toast.makeText(ShowAppointment.this, "Data Not Updated", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
 
     }
+
 
 }

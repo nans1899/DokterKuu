@@ -81,6 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_6, notes);
 
         db.update(TABLE_NAME, contentValues,"Username = ?",new String[]{ name });
+        db.close();
         return true;
     }
 
