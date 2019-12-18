@@ -393,8 +393,9 @@ public class DocAppointment extends AppCompatActivity {
                   */
 
                 date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
+                String valuedate = date.toString();
 
-                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), date, diseaseValues, dValues1, dValues2, uKeluh.getText().toString());
+                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString());
                 if(isInserted = true){
                     Toast.makeText(DocAppointment.this, "Data Successfuly inserted", Toast.LENGTH_SHORT).show();
                 }else{
