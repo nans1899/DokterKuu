@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         ImageView c_mata = findViewById(R.id.mataklik);
         ImageView c_gigi = findViewById(R.id.gigiklik);
         ImageView c_pernafasan = findViewById(R.id.pernafasanklik);
+        ImageView c_pencernaan = findViewById(R.id.pencernaanKlik);
+        ImageView c_kepala = findViewById(R.id.kepalaklik);
+        ImageView c_jantung = findViewById(R.id.jantungklik);
 
 
 
@@ -48,6 +51,35 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent PernafasanKlik = new Intent (MainActivity.this, PernafasanActivity.class);
                 startActivity(PernafasanKlik);
+            }
+        });
+
+
+
+        c_pencernaan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent PencernaannKlik = new Intent (MainActivity.this, PencernaanAcivity.class);
+                startActivity(PencernaannKlik);
+            }
+        });
+
+
+        c_kepala.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent KepalaKlik = new Intent (MainActivity.this, KepalaActivity.class);
+                startActivity(KepalaKlik);
+            }
+        });
+
+
+
+        c_jantung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent JantungKlik = new Intent (MainActivity.this, JantungActivity.class);
+                startActivity(JantungKlik);
             }
         });
 

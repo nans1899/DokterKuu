@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dfe0f5"
+    tools:context=".KepalaActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambarmata"
+            android:layout_width="wrap_content"
+            android:layout_height="265dp"
+            android:src="@drawable/kepalacontent"/>
+
+        <GridLayout
+            android:id="@+id/cardcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnOrderPreserved="false"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:layout_marginTop="265dp"
+            android:alignmentMode="alignMargins"
+            android:layout_marginBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sakitkepala"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Sakit Kepala"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Sakit kepala adalah rasa sakit atau nyeri di kepala, yang bisa muncul secara bertahap atau mendadak. Nyeri bisa muncul di salah satu sisi kepala, atau di seluruh bagian kepala. Sakit kepala bisa membuat kepala terasa berdenyut, atau seperti terlilit kencang oleh tali. Sakit kepala bisa terasa ringan hingga berat, dan dapat berlangsung beberapa jam hingga berhari-hari. Umumnya sakit kepala dapat diobati dengan obat-obatan. Namun untuk sakit kepala yang dipicu oleh penyakit serius, diperlukan penanganan lebih lanjut. Gejala sakit kepala adalah sakit atau nyeri di kepala, yang bisa menyebar ke wajah, leher, dan bahu. Penglihatan penderita juga dapat menjadi buram, serta lebih sensitif terhadap cahaya dan suara. Sakit kepala terjadi akibat aktifnya saraf nyeri di kepala. Kondisi ini dapat dipicu oleh beberapa perilaku sehari-hari, seperti kurang tidur atau telat makan. Sakit kepala juga dapat dipicu oleh sejumlah penyakit, antara lain sakit gigi, infeksi telinga, migrain atau migrain pada anak, hipertensi, atau tumor otak."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Pengobatan sakit kepala tergantung dari penyebabnya. Bila tidak ada gejala lain yang berbahaya, sakit kepala dapat diredakan dengan obat-obatan yang dijual bebas, seperti paracetamol. Bila sakit kepala dirasa mengkhawatirkan, segeralah berkonsultasi dengan dokter untuk mendapatkan pemeriksaan dan penanganan yang sesuai. Untuk mencegah sakit kepala akibat perilaku sehari-hari, terapkanlah perilaku hidup yang sehat, misalnya beristirahat dengan cukup dan rutin berolahraga. Sedangkan untuk sakit kepala akibat suatu penyakit, pencegahan yang terbaik adalah dengan mengobati penyebabnya."/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </GridLayout>
+        <TextView
+            android:id="@+id/bantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:text="Butuh Bantuan Ahli?"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/cardcard"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/janjibutt"
+            android:text="Temui Dokter!"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/bantuan"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>
