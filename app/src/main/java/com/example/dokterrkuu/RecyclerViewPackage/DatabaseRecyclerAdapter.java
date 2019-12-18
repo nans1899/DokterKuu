@@ -31,11 +31,17 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
     public void onBindViewHolder(@NonNull DatabaseViewHolder holder, int position) {
         ModelClass objModelClass = objModelClassArrayList.get(position);
         holder.Name.setText(objModelClass.getName());
-        holder.Date.setText(objModelClass.getName());
-        holder.Disease.setText(objModelClass.getName());
-        holder.docname.setText(objModelClass.getName());
-        holder.hospital.setText(objModelClass.getName());
-        holder.notes.setText(objModelClass.getName());
+        holder.Date.setText(objModelClass.getDate());
+        holder.Disease.setText(objModelClass.getDisease());
+        holder.docname.setText(objModelClass.getDocName());
+        holder.hospital.setText(objModelClass.getHospital());
+        String defaulttext = objModelClass.getKeluhan();
+        if(defaulttext.equals("")){
+            holder.notes.setText("No Basic Complaints or Detailed Information");
+        }else{
+            holder.notes.setText(objModelClass.getKeluhan());
+        }
+
     }
 
     @Override
