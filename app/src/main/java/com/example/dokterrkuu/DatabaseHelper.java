@@ -58,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_5, hospital);
         contentValues.put(COL_6, notes);
         long result = db.insert(""+TABLE_NAME, null, contentValues);
-
+        db.close();
         if(result == -1){
             return false;
         }else{
