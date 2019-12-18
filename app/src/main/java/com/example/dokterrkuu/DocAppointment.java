@@ -407,33 +407,7 @@ public class DocAppointment extends AppCompatActivity {
 
 
 
-    public void updateButton(){
-        databaseHelper = new DatabaseHelper(this);
-        Janji.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Date date;
-                //GET DROPDOWN VALUES
-                String diseaseValues = dropdown3.getSelectedItem().toString();
-                String dValues1 = dropdown.getSelectedItem().toString();
-                String dValues2 = dropdown2.getSelectedItem().toString();
 
-                //GET DATEPICKER ID
-                DatePicker datePicker = (DatePicker) findViewById(R.id.tglReservasi);
-                date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
-                String valuedate = date.toString();
-                boolean isUpdated = databaseHelper.updateData(uName.getText().toString(),
-                        valuedate, diseaseValues,
-                        dValues1, dValues2,
-                        uKeluh.getText().toString());
-                if(isUpdated == true){
-                    Toast.makeText(DocAppointment.this, "Data Updated", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(DocAppointment.this, "Data Not Updated", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
 
 
     //INI YANG MANUAL MASUKINNYA DI ONCREATE HARUSNYA
