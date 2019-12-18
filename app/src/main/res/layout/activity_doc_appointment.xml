@@ -154,6 +154,29 @@
             android:textColor="#ffffff"
             android:layout_below="@+id/NotesKeluhan"/>
 
+
+        <TextView
+            android:id="@+id/sudahjanji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sudah Punya janji?"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/JanjiButton"
+            android:textSize="18sp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif-light/"/>
+
+        <Button
+            android:id="@+id/CekButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cek Jadwal Saya"
+            android:background="#75635f"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/sudahjanji"/>
+
+
+
     </RelativeLayout>
 
 
