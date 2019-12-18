@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView c_pencernaan = findViewById(R.id.pencernaanKlik);
         ImageView c_kepala = findViewById(R.id.kepalaklik);
         ImageView c_jantung = findViewById(R.id.jantungklik);
+        ImageView c_kuping = findViewById(R.id.kupingklik);
 
 
 
@@ -80,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent JantungKlik = new Intent (MainActivity.this, JantungActivity.class);
                 startActivity(JantungKlik);
+            }
+        });
+
+        c_kuping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent KupingKlik = new Intent (MainActivity.this, PendengaranActivity.class);
+                startActivity(KupingKlik);
             }
         });
 

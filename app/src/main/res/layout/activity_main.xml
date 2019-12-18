@@ -284,6 +284,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/kupingklik"
                         android:src="@drawable/kuping"
                         android:layout_width="80dp"
                         android:background="?attr/selectableItemBackground"
