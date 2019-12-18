@@ -30,10 +30,6 @@ public class ShowAppointment extends AppCompatActivity {
 
     Button updateB, deleteB;
 
-    TextView name;
-    EditText date, disease, docname, hospital,notes;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +82,7 @@ public class ShowAppointment extends AppCompatActivity {
             Toast.makeText(this, "Failed to Show Value Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-    public void updateDataShowAppointment(){
+    public void updateDataShowAppointment(View view){
       updateB.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
