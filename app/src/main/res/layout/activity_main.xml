@@ -179,6 +179,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/pencernaanKlik"
                         android:src="@drawable/lambung"
                         android:layout_width="80dp"
                         android:background="?attr/selectableItemBackground"
@@ -213,6 +214,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/kepalaklik"
                         android:src="@drawable/otak"
                         android:layout_width="80dp"
                         android:background="?attr/selectableItemBackground"
@@ -247,6 +249,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/jantungklik"
                         android:src="@drawable/hati"
                         android:layout_width="80dp"
                         android:background="?attr/selectableItemBackground"
