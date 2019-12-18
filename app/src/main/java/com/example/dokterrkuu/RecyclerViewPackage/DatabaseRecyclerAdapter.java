@@ -60,8 +60,8 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
             Name = itemView.findViewById(R.id.viewName);
             Date = itemView.findViewById(R.id.viewDate);
             Disease = itemView.findViewById(R.id.viewDisease);
-            docname = itemView.findViewById(R.id.currentDocName);
-            hospital = itemView.findViewById(R.id.currentHospital);
+            docname = itemView.findViewById(R.id.textviewDocName);
+            hospital = itemView.findViewById(R.id.textviewHospital);
             notes = itemView.findViewById(R.id.viewNotes);
         }
     }
