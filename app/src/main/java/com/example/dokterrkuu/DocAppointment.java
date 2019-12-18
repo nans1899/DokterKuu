@@ -2,11 +2,7 @@ package com.example.dokterrkuu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
-import android.app.DownloadManager;
-import android.content.ContentValues;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,17 +12,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-
 import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 
 public class DocAppointment extends AppCompatActivity {
 
     //INITIATE VARIABLES
-    EditText uName;
+    EditText uName,uKeluh;
     Button Janji;
     Spinner dropdown, dropdown2, dropdown3;
     DatabaseHelper databaseHelper;
@@ -43,6 +34,7 @@ public class DocAppointment extends AppCompatActivity {
 
         //GET UI ID'S
         uName = (EditText) findViewById(R.id.UsernameDocAppointment);
+        uKeluh = (EditText) findViewById(R.id.NotesKeluhan);
         Janji = (Button) findViewById(R.id.JanjiButton);
 
         //GET SPINNER ID'S
@@ -391,7 +383,7 @@ public class DocAppointment extends AppCompatActivity {
 
                 date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
 
-                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), date, diseaseValues, dValues1, dValues2);
+                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), date, diseaseValues, dValues1, dValues2, uKeluh.getText().toString());
                 if(isInserted = true){
                     Toast.makeText(DocAppointment.this, "Data Successfuly inserted", Toast.LENGTH_SHORT).show();
                 }else{
