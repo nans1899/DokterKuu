@@ -406,6 +406,18 @@ public class DocAppointment extends AppCompatActivity {
     }
 
 
+
+    //CREATE DB
+    public void createTable(View view){
+        try{
+            databaseHelper.getReadableDatabase();
+        }catch(Exception e){
+            Toast.makeText(this, "Cannot Make a New Table Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
     //INI YANG MANUAL MASUKINNYA DI ONCREATE HARUSNYA
         /*
         String[] items2 = new String[]{"Rs MMC", "Rs Pertamina", "Rs Cipto Mangunkusumo", "Rs AL Minthohardjo", "Rs Pelni"};
