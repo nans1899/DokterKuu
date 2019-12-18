@@ -175,6 +175,16 @@
             android:textColor="#ffffff"
             android:layout_below="@+id/sudahjanji"/>
 
+        <Button
+            android:id="@+id/CreateTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Table"
+            android:background="#75635f"
+            android:textColor="#ffffff"
+            android:onClick=""
+            android:layout_below="@+id/CekButton"/>
+
 
 
     </RelativeLayout>
