@@ -16,17 +16,18 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:hint="Name"
         android:id="@+id/viewName"/>
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="7dp"
         android:layout_marginTop="5dp"
         android:hint="Date"
+        android:textSize="20dp"
         android:id="@+id/viewDate"
         android:layout_below="@+id/viewName"/>
 
@@ -36,9 +37,9 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:textSize="20dp"
         android:id="@+id/viewDisease"
         android:hint="Disease"
-        android:textSize="18dp"
         android:layout_below="@+id/viewDate"/>
 
     <TextView
@@ -51,61 +52,24 @@
         android:text="Doctor Name"/>
 
     <TextView
-        android:id="@+id/currentDocName"
+        android:id="@+id/textviewHospital"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textviewDocName"
         android:textSize="20dp"
         android:layout_marginLeft="10dp"
-        android:text="Current Doctor"/>
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:id="@+id/spinnerDocName"
-        android:layout_below="@+id/currentDocName"/>
-
-    <TextView
-        android:id="@+id/textviewHospital"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerDocName"
-        android:textSize="20dp"
-        android:layout_marginLeft="10dp"
         android:text="Hospital"/>
 
     <TextView
-        android:id="@+id/currentHospital"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textviewHospital"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:textSize="20dp"
-        android:layout_marginLeft="10dp"
-        android:text="Current Hospital"/>
-
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:id="@+id/spinnerHospital"
-        android:layout_below="@+id/currentHospital"/>
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
         android:hint="Notes"
         android:id="@+id/viewNotes"
-        android:layout_below="@+id/spinnerHospital"/>
+        android:layout_below="@+id/textviewHospital"/>
 
     <TextView
         android:layout_width="wrap_content"
