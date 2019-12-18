@@ -13,6 +13,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "User.db";
     public static final String TABLE_NAME = "Users";
+
     public static final String COL_1 = "Username";
     public static final String COL_2 = "Date";
     public static final String COL_3 = "Disease";
