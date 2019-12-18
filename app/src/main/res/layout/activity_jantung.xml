@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dfe0f5"
+    tools:context=".JantungActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambarmata"
+            android:layout_width="wrap_content"
+            android:layout_height="265dp"
+            android:src="@drawable/jantungcontent"/>
+
+        <GridLayout
+            android:id="@+id/cardcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnOrderPreserved="false"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:layout_marginTop="265dp"
+            android:alignmentMode="alignMargins"
+            android:layout_marginBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/seranganjantung"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyakit Jantung"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Penyakit jantung koroner (PJK) terjadi ketika pembuluh darah arteri yang mengalirkan darah ke jantung mengeras dan mengalami penyempitan. Kondisi ini dipicu oleh penumpukan kolesterol dan pembekuan darah di dalam arteri (aterosklerosis). Penyempitan arteri ini menyebabkan aliran darah dan oksigen ke jantung menjadi berkurang, akibatnya organ tersebut tidak dapat berfungsi normal. Gejala yang muncul dari penyakit ini antara lain nyeri dada, sesak napas, keringat dingin, dada berdebar, dan mual. Nyeri dada akibat PJK bisa dirasakan menjalar hingga ke leher, rahang, tenggorokan, punggung, dan lengan. Jika dibiarkan tanpa penanganan, kondisi ini bisa menimbulkan komplikasi berupa serangan jantung."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Penanganan penyakit jantung koroner (PJK) umumnya melibatkan perubahan pola hidup yang dapat dikombinasikan dengan obat-obatan atau prosedur medis. Menjalani pola hidup sehat dapat meningkatkan kesehatan jantung."/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </GridLayout>
+        <TextView
+            android:id="@+id/bantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:text="Butuh Bantuan Ahli?"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/cardcard"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/janjibutt"
+            android:text="Temui Dokter!"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/bantuan"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>
