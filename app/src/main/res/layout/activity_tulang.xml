@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TulangActivity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambarmata"
+            android:layout_width="wrap_content"
+            android:layout_height="265dp"
+            android:src="@drawable/tulangcontent"/>
+
+        <GridLayout
+            android:id="@+id/cardcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnOrderPreserved="false"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:layout_marginTop="265dp"
+            android:alignmentMode="alignMargins"
+            android:layout_marginBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/dislokasi"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Dislokasi"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Dislokasi adalah cedera pada sendi yang terjadi ketika tulang bergeser dan keluar dari posisi normalnya. Seluruh sendi pada tubuh dapat mengalami dislokasi, termasuk sendi bahu, jari, lutut, pinggul, dan pergelangan kaki. Dislokasi terjadi akibat cedera, terutama benturan keras yang dialami oleh sendi. Dislokasi cenderung sulit dibedakan dengan patah tulang. Sebagai langkah awal, dokter akan memeriksa area sendi yang dicurigai mengalami dislokasi, serta sirkulasi darah di sekitar area dislokasi."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Beberapa cara menyembuhkan dislokasi adalah Reduksi, Imobilisasi, Operasi,dan Rehabilitasi."/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/fracture"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Fracture"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Patah tulang merupakan salah satu jenis cedera yang cukup umum terjadi pada orang dewasa yang sering melakukan banyak aktivitas fisik dan anak-anak yang mengalami kecelakaan saat bermain. Patah tulang, dalam istilah medis, kerap dikenal dengan sebutan fraktur. Patah tulang ini dikatakan sebagai cedera yang cukup umum karena berdasarkan data, setidaknya rata-rata orang akan mengalami patah tulang sebanyak dua kali seumur hidup. Penyebabnya pun cukup beragam, mulai dari adanya benturan keras pada tulang, atau masalah kesehatan pada tulang itu sendiri."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Segeralah menghubungi dokter dan melakukan pemeriksaan di ruang gawat darurat jika patah tulang terjadi. Biasanya, dokter akan melakukan pemeriksaan medis seperti dengan menanyakan penyebab cedera, apa yang dirasakan, dan mengambil gambar dengan X-ray atau CT-scan dan MRI untuk mengetahui kondisi dan bentuk tulang yang mengalami cedera. Setelah diketahui kondisi cedera, biasanya pasien akan segera ditindak sesuai dengan kondisi dan kebutuhan. Tindakan yang dilakukan tentu akan bergantung pada keparahan cedera yang terjadi. Dokter biasanya akan memastikan bahwa tulang sudah tersusun dengan benar sebagaimana mestinya sebelum meletakkan gips pada bagian tubuh yang cedera. Terkadang, akan diperlukan tindakan operasi untuk memasang batang logam atau pelat agar dapat menggabungkan potongan tulang yang terpisah. Proses pemulihan cedera patah tulang cukup beragam tergantung pada usia dan kondisi kesehatan pasien."/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </GridLayout>
+        <TextView
+            android:id="@+id/bantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:text="Butuh Bantuan Ahli?"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/cardcard"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/janjipendengaran"
+            android:text="Temui Dokter!"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/bantuan"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>
