@@ -11,8 +11,9 @@ import java.sql.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "User.db";
-    public static final String TABLE_NAME = "Users";
+
+    public static final String DATABASE_NAME = "UserAppointmet.db";
+    public static final String TABLE_NAME = "UsersAppointment";
 
     public static final String COL_1 = "Username";
     public static final String COL_2 = "Date";
@@ -33,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         try{
 
-            db.execSQL("create table Users (Username VARCHAR(255) PRIMARY KEY, Date DATE, disease VARCHAR(255),docName VARCHAR(255), Hospital TEXT, Notes TEXT)");
+            db.execSQL("create table UsersAppointment (Username VARCHAR(255) PRIMARY KEY, Date VARCHAR(255), disease VARCHAR(255),docName VARCHAR(255), Hospital TEXT, Notes TEXT)");
             Toast.makeText(context, "Table Created Successfuly", Toast.LENGTH_SHORT).show();
 
         }catch(Exception e){
@@ -47,11 +48,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name, Date Date,String disease,String docname, String hospital, String notes){
+    public boolean insertData(String name, String Date,String disease,String docname, String hospital, String notes){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, name);
-        contentValues.put(COL_2, Date.toString());
+        contentValues.put(COL_2, Date);
         contentValues.put(COL_3, disease);
         contentValues.put(COL_4, docname);
         contentValues.put(COL_5, hospital);
