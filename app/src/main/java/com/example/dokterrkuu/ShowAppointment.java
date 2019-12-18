@@ -45,7 +45,7 @@ public class ShowAppointment extends AppCompatActivity {
         updateB = (Button) findViewById(R.id.buttonUpdate);
         deleteB = (Button) findViewById(R.id.buttonDelete);
 
-        updateData();
+
     }
 
     public void showValueFromDatabase(View view){
@@ -84,7 +84,7 @@ public class ShowAppointment extends AppCompatActivity {
             Toast.makeText(this, "Failed to Show Value Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-    public void updateData(){
+    public void updateDataShowAppointment(){
       updateB.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
@@ -101,7 +101,6 @@ public class ShowAppointment extends AppCompatActivity {
 
               Button updated = (Button) findViewById(R.id.JanjiButton);
 
-              updated.setText("Update Janji");
               updated.setOnClickListener(new View.OnClickListener() {
                   @Override
                   public void onClick(View v) {
