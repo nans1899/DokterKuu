@@ -45,15 +45,7 @@ public class ShowAppointment extends AppCompatActivity {
         updateB = (Button) findViewById(R.id.buttonUpdate);
         deleteB = (Button) findViewById(R.id.buttonDelete);
 
-        name = (TextView) findViewById(R.id.viewName);
-        date = (EditText) findViewById(R.id.viewDate);
-        disease = (EditText) findViewById(R.id.viewDisease);
-        docname = (EditText) findViewById(R.id.viewDocName);
-        hospital = (EditText) findViewById(R.id.viewHospital);
-        notes = (EditText) findViewById(R.id.viewNotes);
-
         updateData();
-
     }
 
     public void showValueFromDatabase(View view){
@@ -97,8 +89,15 @@ public class ShowAppointment extends AppCompatActivity {
           @Override
           public void onClick(View v) {
               Intent intent = new Intent(ShowAppointment.this, DocAppointment.class);
-              EditText nametoUpdate = (EditText) findViewById(R.id.UsernameDocAppointment);
-              nametoUpdate.setText(name.getText().toString());
+
+              DatabaseHelper databaseHelper = new DatabaseHelper(ShowAppointment.this);
+              SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+              Cursor cursor = sqLiteDatabase.rawQuery("select * from UsersAppointment", new String[]{" Username "});
+              String thename = cursor.getString(0).toString();
+
+              EditText updatedname = (EditText) findViewById(R.id.UsernameDocAppointment);
+
+              updatedname.setText(thename);
 
               Button updated = (Button) findViewById(R.id.JanjiButton);
 
