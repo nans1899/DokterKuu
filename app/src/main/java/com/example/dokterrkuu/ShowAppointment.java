@@ -4,26 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dokterrkuu.RecyclerViewPackage.DatabaseRecyclerAdapter;
 import com.example.dokterrkuu.RecyclerViewPackage.ModelClass;
 
-import org.w3c.dom.Text;
-
-import java.sql.Date;
 import java.util.ArrayList;
 
 public class ShowAppointment extends AppCompatActivity {
@@ -33,20 +22,12 @@ public class ShowAppointment extends AppCompatActivity {
 
     DatabaseRecyclerAdapter objDatabaseRecyclerAdapter;
 
-    DatabaseHelper databaseHelper;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_appointment);
-
-
-        databaseHelper = new DatabaseHelper(this);
         recyclerView = (RecyclerView) findViewById(R.id.ListAppointmnet);
         objModelClassArrayList = new ArrayList<>();
-
-
-
     }
 
     public void showValueFromDatabase(View view){
@@ -54,8 +35,8 @@ public class ShowAppointment extends AppCompatActivity {
             DatabaseHelper databaseHelper = new DatabaseHelper(this);
             SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
             if(sqLiteDatabase != null){
-                Cursor cursor = sqLiteDatabase.rawQuery("select * from UsersAppointment", null);
-                if(cursor.getCount()==0){
+                Cursor cursor = sqLiteDatabase.rawQuery("select * from Users", null);
+                if(cursor.moveToNext()){
                     Toast.makeText(this, "No Data To Show", Toast.LENGTH_SHORT).show();
                 }else{
 
@@ -80,8 +61,10 @@ public class ShowAppointment extends AppCompatActivity {
                 Toast.makeText(this, "Database Not Found or Null", Toast.LENGTH_SHORT).show();
             }
 
+
         }catch(Exception e){
             Toast.makeText(this, "Failed to Show Value Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
 }

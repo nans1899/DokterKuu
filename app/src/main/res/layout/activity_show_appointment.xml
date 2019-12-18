@@ -8,18 +8,9 @@
     tools:context=".ShowAppointment">
 
 
-    <TextView
-        android:id="@+id/TitleShowApp"
-        android:text="APPOINTMENTS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20dp"
-        />
 
     <Button
         android:id="@+id/showAppointment"
-        android:layout_below="@id/TitleShowApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Show Appointment"
