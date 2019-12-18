@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dfe0f5"
+    tools:context=".PencernaanAcivity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambarmata"
+            android:layout_width="wrap_content"
+            android:layout_height="265dp"
+            android:src="@drawable/pencernaancontent"/>
+
+        <GridLayout
+            android:id="@+id/cardcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnOrderPreserved="false"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:layout_marginTop="265dp"
+            android:alignmentMode="alignMargins"
+            android:layout_marginBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/diare"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Diare"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Diare merupakan salah satu gangguan sistem pencernaan yang banyak dialami. Dimana gangguan pencernaan ini akan membuat perut terasa mulas dan feses penderita menjadi encer. Gangguan ini terjadi karena selaput dinding usus besar si penderita mengalami iritasi. Ada beberapa hal yang menyebabkan seseorang menderita diare, dimana salah satunya yaitu karena penderita mengkonsumsi makanan yang tidak higenis atau mengandung kuman, sehingga dengan begitu gerakan peristaltik usus menjadi tidak terkendali serta di dalam usus besar tidak terjadi penyerapan air. Jika fases penderita bercampur dengan nanah atau darah, maka gejala tersebut menunjukan bahwa si penderita mengalami desentri yang mana gangguan itu disebabkan karena adanya infeksi bakteri Shigella pada dinding usus besar orang yang menderitanya."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Sebagian besar diare sebenarnya dapat sembuh dengan sendirinya dalam beberapa hari, namun tetap tidak boleh dianggap enteng. Selain menimbulkan gejala yang sangat tidak nyaman, diare juga bisa menyebabkan dehidrasi. Untuk meringankan gejala sekaligus mempercepat proses penyembuhan diare, beberapa langkah sederhana berikut ini dapat Anda lakukan, seperti menambah asupan cairan, mengonsumsi makanan yang tepat, Menyesuaikan pola makan, dan Menghindari sajian yang dapat memperparah diare seperti makanan pedas ataupun yang digoreng"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/gastritis"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Gatritis"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Gastritis merupakan penyakit pada lambung yang terjadi akibat peradangan dinding lambung. Pada dinding lambung atau lapisan mukosa lambung ini terdapat kelenjar yang menghasilkan asam lambung dan enzim pencernaan yang bernama pepsin. Untuk melindungi lapisan mukosa lambung dari kerusakan yang diakibatkan asam lambung, dinding lambung dilapisi oleh lendir (mukus) yang tebal. Apabila mukus tersebut rusak, dinding lambung rentan mengalami peradangan."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Untuk membantu meredakan gejala dan penyembuhan gastritis, pasien perlu menyesuaikan gaya hidup dan kebiasaan. Pasien akan dianjurkan untuk membuat pola dan jadwal makan yang teratur. Pasien yang sering makan dengan porsi besar, akan dianjurkan untuk mengubah porsinya menjadi sedikit-sedikit, sehingga jadwal makan menjadi lebih sering dari biasanya. Selain itu, pasien sebaiknya menghindari makanan berminyak, asam, atau pedas, guna mencegah gajala gastritis bertambah parah."/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/apendistis"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Apendistis"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Apendisitis merupakan gangguan sistem pencernaan yang mana umbai cacing atau usus buntu mengalami peradangan. Apendisitis ini biasanya terjadi ketika ada sisa-sisa makanan yang terjebak serta tidak bisa keluar di umbai cacing. Sehingga lama kelamaan umbai cacing tersebut akan menjadi busuk serta akan menimbulkan peradangan yang menjalar ke usus buntu. Jika umbai cacing tidak segera dibuang, maka lama kelamaan akan pecah. Dimana peradangan usus buntu ini biasanya ditandai dengan terdapatnya nanah. Bila gangguan atau penyakit ini tidak terawat, maka akan menyebabkan angka kematian yang cukup tinggi."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Apabila dokter mencurigai Anda terkena apendisitis kronik, dokter akan melakukan pemeriksaan fisik ditambah tes penunjang dengan pemeriksaan darah dan urine, USG, Rontgen (dengan barium enema), CT scan, dan MRI pada organ pencernaan Anda, untuk membantu menegakkan diagnosis dan mencari penyebab nyeri perut. Apendisitis biasanya diatasi dengan prosedur operasi pengangkatan usus buntu yang meradang atau apendektomi. Namun, operasi pada apendisitis kronis tidak selalu bersifat darurat. Dokter biasanya akan memberikan obat antibiotik dan antinyeri untuk mengobati kondisi radang usus buntu kronis."/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:elevation="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sembelit"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Konstipasi"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Konstipasi atau sembelit adalah frekuensi buang air besar yang lebih sedikit dari biasanya. Jarak waktu buang air besar pada setiap orang berbeda-beda. Namun umumnya dalam satu minggu, manusia buang air besar setidaknya lebih dari 3 kali. Jika frekuensi buang air besar kurang dari 3 kali dalam seminggu, maka seseorang disebut mengalami konstipasi. Akibatnya, tinja menjadi kering dan keras sehingga lebih sulit dikeluarkan dari anus."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        android:text="Penyembuhan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="langkah penanganan yang bisa dilakukan adalah dengan mengubah pola makan dan gaya hidup, pemberian obat, atau prosedur operasi."/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+        <TextView
+            android:id="@+id/bantuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:text="Butuh Bantuan Ahli?"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/cardcard"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/janjibutt"
+            android:text="Temui Dokter!"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/bantuan"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>
