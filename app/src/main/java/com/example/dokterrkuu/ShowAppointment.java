@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dokterrkuu.RecyclerViewPackage.DatabaseRecyclerAdapter;
@@ -22,12 +26,34 @@ public class ShowAppointment extends AppCompatActivity {
 
     DatabaseRecyclerAdapter objDatabaseRecyclerAdapter;
 
+    DatabaseHelper databaseHelper;
+
+    Button updateB, deleteB;
+
+    TextView name;
+    EditText date, disease, docname, hospital,notes;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_appointment);
+
+        databaseHelper = new DatabaseHelper(this);
         recyclerView = (RecyclerView) findViewById(R.id.ListAppointmnet);
         objModelClassArrayList = new ArrayList<>();
+        updateB = (Button) findViewById(R.id.buttonUpdate);
+        deleteB = (Button) findViewById(R.id.buttonDelete);
+
+        name = (TextView) findViewById(R.id.viewName);
+        date = (EditText) findViewById(R.id.viewDate);
+        disease = (EditText) findViewById(R.id.viewDisease);
+        docname = (EditText) findViewById(R.id.viewDocName);
+        hospital = (EditText) findViewById(R.id.viewHospital);
+        notes = (EditText) findViewById(R.id.viewNotes);
+
+        updateData();
+
     }
 
     public void showValueFromDatabase(View view){
@@ -66,5 +92,28 @@ public class ShowAppointment extends AppCompatActivity {
             Toast.makeText(this, "Failed to Show Value Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+    public void updateData(){
+      updateB.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent intent = new Intent(ShowAppointment.this, DocAppointment.class);
+              EditText nametoUpdate = (EditText) findViewById(R.id.UsernameDocAppointment);
+              nametoUpdate.setText(name.getText().toString());
+
+              Button updated = (Button) findViewById(R.id.JanjiButton);
+
+              updated.setText("Update Janji");
+              updated.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      DocAppointment docAppointment = new DocAppointment();
+                      docAppointment.updateButton();
+                  }
+              });
+              startActivity(intent);
+          }
+      });
+    }
+
 
 }

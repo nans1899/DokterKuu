@@ -70,5 +70,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
 
     }
+    public boolean updateData(String name, String date, String disease, String docname, String hospital, String notes){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_1, name);
+        contentValues.put(COL_2, date);
+        contentValues.put(COL_3, disease);
+        contentValues.put(COL_4, docname);
+        contentValues.put(COL_5, hospital);
+        contentValues.put(COL_6, notes);
+
+        db.update(TABLE_NAME, contentValues,"Username = ?",new String[]{ name });
+        return true;
+    }
 
 }

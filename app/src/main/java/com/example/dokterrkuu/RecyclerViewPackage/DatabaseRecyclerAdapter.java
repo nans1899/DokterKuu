@@ -3,6 +3,7 @@ package com.example.dokterrkuu.RecyclerViewPackage;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
     public DatabaseRecyclerAdapter(ArrayList<ModelClass> objModelClassArrayList) {
         this.objModelClassArrayList = objModelClassArrayList;
     }
+
 
     @NonNull
     @Override
