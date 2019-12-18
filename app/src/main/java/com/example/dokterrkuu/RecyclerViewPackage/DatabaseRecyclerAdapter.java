@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -53,17 +54,18 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
 
     public static class DatabaseViewHolder extends RecyclerView.ViewHolder{
         TextView Name, Date, Disease, docname, hospital, notes;
+
         public DatabaseViewHolder(@NonNull View itemView) {
             super(itemView);
             Name = itemView.findViewById(R.id.viewName);
             Date = itemView.findViewById(R.id.viewDate);
             Disease = itemView.findViewById(R.id.viewDisease);
-            docname = itemView.findViewById(R.id.viewDocName);
-            hospital = itemView.findViewById(R.id.viewHospital);
+            docname = itemView.findViewById(R.id.currentDocName);
+            hospital = itemView.findViewById(R.id.currentHospital);
             notes = itemView.findViewById(R.id.viewNotes);
-
-
         }
     }
+
+
 
 }
