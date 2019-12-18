@@ -157,6 +157,15 @@
             android:layout_below="@+id/CekButton"/>
 
 
+        <Button
+            android:id="@+id/UpdateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ubah Jadwal Saya"
+            android:background="#75635f"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/CekButton"/>
+
 
 
     </RelativeLayout>

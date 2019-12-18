@@ -29,7 +29,6 @@
         <activity android:name=".PendengaranActivity" />
         <activity android:name=".JantungActivity" />
         <activity android:name=".KepalaActivity" />
-        <activity android:name=".ShowAppointment" />
         <activity android:name=".PencernaanAcivity" />
         <activity android:name=".PernafasanActivity" />
         <activity android:name=".GigiActivity" />

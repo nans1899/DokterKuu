@@ -142,7 +142,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/janjitulang"
+            android:id="@+id/janjipendengaran"
             android:text="Temui Dokter!"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="30dp"
