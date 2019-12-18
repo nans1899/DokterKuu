@@ -39,11 +39,13 @@ public class ShowAppointment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_appointment);
 
+        View inflatedView = getLayoutInflater().inflate(R.layout.single_row, null);
+
         databaseHelper = new DatabaseHelper(this);
         recyclerView = (RecyclerView) findViewById(R.id.ListAppointmnet);
         objModelClassArrayList = new ArrayList<>();
-        updateB = (Button) findViewById(R.id.buttonUpdate);
-        deleteB = (Button) findViewById(R.id.buttonDelete);
+        updateB = (Button) inflatedView.findViewById(R.id.buttonUpdate);
+        deleteB = (Button) inflatedView.findViewById(R.id.buttonDelete);
 
 
     }
@@ -93,13 +95,15 @@ public class ShowAppointment extends AppCompatActivity {
               DatabaseHelper databaseHelper = new DatabaseHelper(ShowAppointment.this);
               SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
               Cursor cursor = sqLiteDatabase.rawQuery("select * from UsersAppointment", new String[]{" Username "});
-              String thename = cursor.getString(0).toString();
+              String thename = cursor.getString(0);
 
-              EditText updatedname = (EditText) findViewById(R.id.UsernameDocAppointment);
+              View docapp = getLayoutInflater().inflate(R.layout.activity_doc_appointment, null);
+
+              EditText updatedname = (EditText) docapp.findViewById(R.id.UsernameDocAppointment);
 
               updatedname.setText(thename);
 
-              Button updated = (Button) findViewById(R.id.JanjiButton);
+              Button updated = (Button) docapp.findViewById(R.id.JanjiButton);
 
               updated.setOnClickListener(new View.OnClickListener() {
                   @Override
