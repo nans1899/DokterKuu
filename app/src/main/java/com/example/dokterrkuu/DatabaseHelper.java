@@ -11,8 +11,10 @@ import java.sql.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+
     public static final String DATABASE_NAME = "UserAppointmet.db";
     public static final String TABLE_NAME = "UsersAppointment";
+
     public static final String COL_1 = "Username";
     public static final String COL_2 = "Date";
     public static final String COL_3 = "Disease";
