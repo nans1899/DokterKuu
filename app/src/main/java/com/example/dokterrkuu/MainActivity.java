@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageView c_mata = findViewById(R.id.mataklik);
         ImageView c_gigi = findViewById(R.id.gigiklik);
+        ImageView c_pernafasan = findViewById(R.id.pernafasanklik);
 
 
 
@@ -38,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent GigiKlik = new Intent (MainActivity.this, GigiActivity.class);
                 startActivity(GigiKlik);
+            }
+        });
+
+
+        c_pernafasan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent PernafasanKlik = new Intent (MainActivity.this, PernafasanActivity.class);
+                startActivity(PernafasanKlik);
             }
         });
 

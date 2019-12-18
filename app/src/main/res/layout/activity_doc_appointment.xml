@@ -50,7 +50,7 @@
                 android:drawablePadding="30dp"
                 android:layout_margin="10dp"
                 android:background="@android:color/transparent"
-                android:hint="Nama Pembbuat Janji"
+                android:hint="Nama Pembuat Janji"
                 android:drawableLeft="@drawable/ic_person_black_24dp"/>
 
         </androidx.cardview.widget.CardView>
@@ -133,6 +133,18 @@
             android:spinnerMode="dropdown"/>
 
 
+        <EditText
+            android:id="@+id/NotesKeluhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="30dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:layout_below="@+id/spinner2"
+            android:hint="Keterangan Keluhan"
+            android:drawableLeft="@drawable/ic_speaker_notes_black_24dp"/>
+
+
         <Button
             android:id="@+id/JanjiButton"
             android:layout_width="match_parent"
@@ -140,7 +152,7 @@
             android:text="Buat Janji"
             android:background="#75635f"
             android:textColor="#ffffff"
-            android:layout_below="@+id/spinner2"/>
+            android:layout_below="@+id/NotesKeluhan"/>
 
     </RelativeLayout>
 

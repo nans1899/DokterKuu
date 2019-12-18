@@ -51,7 +51,7 @@ public class DocAppointment extends AppCompatActivity {
         dropdown3 = findViewById(R.id.spinner3);
 
         //THE SPECIALIST
-        final String[] specialValues = new String[]{"Penglihatan","Kesehatan Gigi","Pernafasan","Lambung","Sakit Kepala","Kesehatan Jantung","Pendengaran","Tulang"};
+        final String[] specialValues = new String[]{"Penglihatan","Kesehatan Gigi","Pernafasan","Pencernaan","Sakit Kepala","Kesehatan Jantung","Pendengaran","Tulang"};
 
         //THE DOCTORS
         final String[] Penglihatan = {"Prof. Dr. Darwin Dalimunthe","Prof. Dr. Enrique Immanuel","Prof. Dr. Enrico Herlambang"};
