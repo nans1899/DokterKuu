@@ -35,15 +35,9 @@ public class ShowAppointment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_appointment);
 
-        View inflatedView = getLayoutInflater().inflate(R.layout.single_row, null);
-
         databaseHelper = new DatabaseHelper(this);
         recyclerView = (RecyclerView) findViewById(R.id.ListAppointmnet);
         objModelClassArrayList = new ArrayList<>();
-        updateB = (Button) inflatedView.findViewById(R.id.buttonUpdate);
-        deleteB = (Button) inflatedView.findViewById(R.id.buttonDelete);
-
-
     }
 
     public void showValueFromDatabase(View view){
@@ -83,10 +77,6 @@ public class ShowAppointment extends AppCompatActivity {
         }
     }
     public void updateDataShowAppointment(View view){
-      updateB.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              Intent intent = new Intent(ShowAppointment.this, DocAppointment.class);
 
               DatabaseHelper databaseHelper = new DatabaseHelper(ShowAppointment.this);
               SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
@@ -108,9 +98,8 @@ public class ShowAppointment extends AppCompatActivity {
                       docAppointment.updateButton();
                   }
               });
+              Intent intent = new Intent(ShowAppointment.this, DocAppointment.class);
               startActivity(intent);
-          }
-      });
     }
 
 
