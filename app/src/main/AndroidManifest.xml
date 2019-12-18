@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
- 18/12/19new
+
         <activity android:name=".PendengaranActivity"></activity>
         <activity android:name=".JantungActivity" />
         <activity android:name=".KepalaActivity" />
-=======
+
         <activity android:name=".ShowAppointment"></activity>
- test1
+
         <activity android:name=".PencernaanAcivity" />
         <activity android:name=".PernafasanActivity" />
         <activity android:name=".GigiActivity" />
