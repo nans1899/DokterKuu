@@ -36,7 +36,7 @@ public class ShowAppointment extends AppCompatActivity {
             SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
             if(sqLiteDatabase != null){
                 Cursor cursor = sqLiteDatabase.rawQuery("select * from UsersAppointment", null);
-                if(cursor.moveToNext()){
+                if(cursor.getCount()==0){
                     Toast.makeText(this, "No Data To Show", Toast.LENGTH_SHORT).show();
                 }else{
 
