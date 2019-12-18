@@ -13,13 +13,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.dokterrkuu.RecyclerViewPackage.ModelClass;
+
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class DocAppointment extends AppCompatActivity {
 
     //INITIATE VARIABLES
     EditText uName,uKeluh;
-    Button Janji;
+    Button Janji,Update;
     Spinner dropdown, dropdown2, dropdown3;
     DatabaseHelper databaseHelper;
 
@@ -47,6 +50,7 @@ public class DocAppointment extends AppCompatActivity {
         uName = (EditText) findViewById(R.id.UsernameDocAppointment);
         uKeluh = (EditText) findViewById(R.id.NotesKeluhan);
         Janji = (Button) findViewById(R.id.JanjiButton);
+        Update = (Button) findViewById(R.id.UpdateButton);
 
         //GET SPINNER ID'S
         dropdown = findViewById(R.id.spinner1);
@@ -362,7 +366,7 @@ public class DocAppointment extends AppCompatActivity {
 
         //METHOD FOR APPOINTMENT BUTTON
         AddData();
-
+        UpdateData();
     }
 
     public void AddData(){
@@ -396,7 +400,7 @@ public class DocAppointment extends AppCompatActivity {
                 String valuedate = date.toString();
 
                 boolean isInserted = databaseHelper.insertData(uName.getText().toString(), valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString());
-                if(isInserted = true){
+                if(isInserted == true){
                     Toast.makeText(DocAppointment.this, "Data Successfuly inserted", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(DocAppointment.this, "Failed Inserting The Data", Toast.LENGTH_SHORT).show();
@@ -406,7 +410,37 @@ public class DocAppointment extends AppCompatActivity {
     }
 
 
+public void UpdateData(){
+        Update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Date date;
+                ArrayList<ModelClass> objModelClassArrayList;
+                //GET DROPDOWN VALUES
+                String diseaseValues = dropdown3.getSelectedItem().toString();
+                String dValues1 = dropdown.getSelectedItem().toString();
+                String dValues2 = dropdown2.getSelectedItem().toString();
 
+                String checknama = uName.getText().toString();
+
+                DatePicker datePicker = (DatePicker) findViewById(R.id.tglReservasi);
+
+                date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
+                String valuedate = date.toString();
+
+                ModelClass objModelClass = null;
+
+                String comparename = objModelClass.getName().toString();
+
+             boolean isUpdated = databaseHelper.updateData(uName.getText().toString(), valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString() );
+             if(isUpdated == true || checknama != "" || comparename.isEmpty()){
+                 Toast.makeText(DocAppointment.this, "Update Successful", Toast.LENGTH_SHORT).show();
+             }else{
+                 Toast.makeText(DocAppointment.this, "Something Went Wrong, Update Failed", Toast.LENGTH_SHORT).show();
+             }
+            }
+        });
+}
 
 
 
