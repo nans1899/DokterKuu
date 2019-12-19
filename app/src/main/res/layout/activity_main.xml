@@ -319,6 +319,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/tulangklik"
                         android:src="@drawable/tulag"
                         android:layout_width="80dp"
                         android:background="?attr/selectableItemBackground"
