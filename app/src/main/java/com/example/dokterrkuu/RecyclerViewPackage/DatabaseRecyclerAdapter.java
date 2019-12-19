@@ -26,7 +26,7 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
     @NonNull
     @Override
     public DatabaseViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View singleRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.single_row, viewGroup, false);
+        View singleRow = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_single_row1, viewGroup, false);
         return new DatabaseViewHolder(singleRow);
     }
 

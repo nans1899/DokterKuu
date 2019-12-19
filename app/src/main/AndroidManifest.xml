@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TulangActivity"></activity>
+        <activity android:name=".single_row1"></activity>
+        <activity android:name=".TulangActivity" />
         <activity android:name=".PendengaranActivity" />
         <activity android:name=".JantungActivity" />
         <activity android:name=".KepalaActivity" />
