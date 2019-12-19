@@ -428,12 +428,9 @@ public void UpdateData(){
                 date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
                 String valuedate = date.toString();
 
-                ModelClass objModelClass = null;
-
-                String comparename = objModelClass.getName().toString();
 
              boolean isUpdated = databaseHelper.updateData(uName.getText().toString(), valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString() );
-             if(isUpdated == true || checknama != "" || comparename.isEmpty()){
+             if(isUpdated == true || checknama != ""){
                  Toast.makeText(DocAppointment.this, "Update Successful", Toast.LENGTH_SHORT).show();
              }else{
                  Toast.makeText(DocAppointment.this, "Something Went Wrong, Update Failed", Toast.LENGTH_SHORT).show();
