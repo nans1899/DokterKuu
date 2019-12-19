@@ -1,4 +1,4 @@
-package com.example.dokterrkuu.RecyclerViewPackage;
+package com.example.dokterrkuu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.dokterrkuu.DatabaseHelper;
-import com.example.dokterrkuu.DocAppointment;
-import com.example.dokterrkuu.R;
 
 
 public class singleRow extends AppCompatActivity {
