@@ -433,7 +433,7 @@ public void UpdateData(){
              if(isUpdated == true || checknama != ""){
                  Toast.makeText(DocAppointment.this, "Update Successful", Toast.LENGTH_SHORT).show();
              }else{
-                 Toast.makeText(DocAppointment.this, "Something Went Wrong, Update Failed", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(DocAppointment.this, "Something Went Wrong, Update Failed, This Could Happen Because The Credential's Not Detected", Toast.LENGTH_SHORT).show();
              }
             }
         });
