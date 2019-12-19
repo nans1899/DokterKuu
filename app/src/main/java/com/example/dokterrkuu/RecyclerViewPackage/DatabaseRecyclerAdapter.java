@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dokterrkuu.R;
+import com.example.dokterrkuu.single_row1;
 
 import java.util.ArrayList;
 
@@ -44,6 +46,20 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
         }else{
             holder.notes.setText(objModelClass.getKeluhan());
         }
+        holder.update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                single_row1 single = new single_row1();
+                single.relocate();
+            }
+        });
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                single_row1 single = new single_row1();
+                single.delete();
+            }
+        });
 
     }
 
@@ -55,6 +71,8 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
     public static class DatabaseViewHolder extends RecyclerView.ViewHolder{
         TextView Name, Date, Disease, docname, hospital, notes;
 
+        Button update, delete;
+
         public DatabaseViewHolder(@NonNull View itemView) {
             super(itemView);
             Name = itemView.findViewById(R.id.viewName);
@@ -63,6 +81,8 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
             docname = itemView.findViewById(R.id.textviewDocName);
             hospital = itemView.findViewById(R.id.textviewHospital);
             notes = itemView.findViewById(R.id.viewNotes);
+            update = itemView.findViewById(R.id.buttonUpdate);
+            delete = itemView.findViewById(R.id.buttonDelete);
         }
     }
 
