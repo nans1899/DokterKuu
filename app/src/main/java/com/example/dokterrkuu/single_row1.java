@@ -23,24 +23,16 @@ public class single_row1 extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         delete = (Button) findViewById(R.id.buttonDelete);
         update = (Button) findViewById(R.id.buttonUpdate);
-        relocate();
-        delete();
     }
+
+
     public void relocate(){
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 Intent intent = new Intent(single_row1.this, DocAppointment.class);
                 startActivity(intent);
-            }
-        });
     }
 
 
     public void delete(){
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 nama = (TextView) findViewById(R.id.viewName);
                 Integer deleteRows = databaseHelper.Delete(nama.getText().toString());
                 if(deleteRows>0){
@@ -48,7 +40,5 @@ public class single_row1 extends AppCompatActivity {
                 }else{
                     Toast.makeText(single_row1.this, "Failed to Delete The Data", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
     }
 }
