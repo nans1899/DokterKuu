@@ -84,9 +84,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return true;
     }
-    public Integer Delete(String uName){
+    public Integer deleteData(String uName){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, "Username = ?", new String[] {" uName "});
+        return db.delete(TABLE_NAME, "Username = ?", new String[] {uName});
     }
 
 }
