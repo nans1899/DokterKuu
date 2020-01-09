@@ -77,22 +77,6 @@
         android:layout_alignParentRight="true"
         android:textSize="20dp"
         />
-    <Button
-        android:id="@+id/buttonUpdate"
-        android:layout_below="@+id/viewNotes"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginLeft="7dp"
-        android:text="UPDATE"
-        />
 
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_toEndOf="@+id/buttonUpdate"
-        android:layout_below="@+id/viewNotes"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:text="DELETE"
-        />
 
 </RelativeLayout>
