@@ -9,12 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".TulangActivity"></activity>
-
-        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".SplashActivity"></activity>
+        <activity android:name=".TulangActivity" />
+        <activity android:name=".UserProfile" />
         <activity android:name=".single_row1" />
-
         <activity android:name=".PendengaranActivity" />
         <activity android:name=".JantungActivity" />
         <activity android:name=".KepalaActivity" />
