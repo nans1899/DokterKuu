@@ -76,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
 
         else
         {
+
             Toast.makeText(this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
         }
    }
