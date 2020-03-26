@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".TulangActivity"></activity>
-=======
+
         <activity android:name=".UserProfile"></activity>
         <activity android:name=".single_row1" />
-        <activity android:name=".TulangActivity" />
->>>>>>> Login Baru
+
         <activity android:name=".PendengaranActivity" />
         <activity android:name=".JantungActivity" />
         <activity android:name=".KepalaActivity" />
