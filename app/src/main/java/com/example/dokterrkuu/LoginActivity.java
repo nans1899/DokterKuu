@@ -36,31 +36,31 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Name = (EditText)findViewById(R.id.Username);
-        Password = (EditText)findViewById(R.id.Password);
-        Login = (Button)findViewById(R.id.LogButt);
-
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Validate(Name.getText().toString(), Password.getText().toString());
-            }
-        });
-
-
-    }
-
-    private void Validate(String userName, String userPassword)
-    {
-        if( (userName.equals("Ananda Bakti")) && (userPassword.equals("1234")))
-        {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-        }else
-        {
-            Toast.makeText(this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
-        }
-    }
+//        Name = (EditText)findViewById(R.id.Username);
+//        Password = (EditText)findViewById(R.id.Password);
+//        Login = (Button)findViewById(R.id.LogButt);
+//
+//        Login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Validate(Name.getText().toString(), Password.getText().toString());
+//            }
+//        });
+//
+//
+//    }
+//
+//    private void Validate(String userName, String userPassword)
+//    {
+//        if( (userName.equals("Ananda Bakti")) && (userPassword.equals("1234")))
+//        {
+//            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//            startActivity(intent);
+//        }else
+//        {
+//            Toast.makeText(this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 
 //            public void onClick(View v) {
