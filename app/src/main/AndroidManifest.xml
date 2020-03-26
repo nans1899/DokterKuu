@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".TulangActivity"></activity>
+=======
+        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".single_row1" />
+        <activity android:name=".TulangActivity" />
+>>>>>>> Login Baru
         <activity android:name=".PendengaranActivity" />
         <activity android:name=".JantungActivity" />
         <activity android:name=".KepalaActivity" />
@@ -19,8 +25,8 @@
         <activity android:name=".GigiActivity" />
         <activity android:name=".PengeheliatanActivity" />
         <activity android:name=".DocAppointment" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

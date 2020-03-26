@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbg"
+    android:background="@drawable/backlog"
     tools:context=".LoginActivity">
 
     <RelativeLayout
@@ -12,11 +12,10 @@
         android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="82dp"
-        android:layout_height="82dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:src="@drawable/appslogo"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="310dp"/>
 
 
 
@@ -33,7 +32,7 @@
             android:text="Login"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#ffff"
+            android:textColor="#000"
             android:fontFamily="sans-serif-light"
             android:layout_marginRight="250dp"
             android:layout_marginBottom="220dp"/>
