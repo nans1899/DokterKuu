@@ -180,9 +180,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ubah Jadwal Saya"
+            android:layout_marginTop="20dp"
             android:background="#75635f"
             android:textColor="#ffffff"
             android:layout_below="@+id/CekButton"/>
+
+        <Button
+            android:id="@+id/DeleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Batalkan Janji Saya"
+            android:layout_marginTop="20dp"
+            android:background="#75635f"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/UpdateButton"/>
 
 
 

@@ -46,20 +46,6 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
         }else{
             holder.notes.setText(objModelClass.getKeluhan());
         }
-        holder.update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                single_row1 single = new single_row1();
-                single.relocate();
-            }
-        });
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                single_row1 single = new single_row1();
-                single.delete();
-            }
-        });
 
     }
 
@@ -81,8 +67,6 @@ public class DatabaseRecyclerAdapter extends RecyclerView.Adapter<DatabaseRecycl
             docname = itemView.findViewById(R.id.textviewDocName);
             hospital = itemView.findViewById(R.id.textviewHospital);
             notes = itemView.findViewById(R.id.viewNotes);
-            update = itemView.findViewById(R.id.buttonUpdate);
-            delete = itemView.findViewById(R.id.buttonDelete);
         }
     }
 
