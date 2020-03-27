@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e05c63"
+    android:background="#8deaf5"
     tools:context=".DocAppointment">
 
     <RelativeLayout
@@ -13,15 +13,15 @@
 
         <ImageView
             android:id="@+id/buatjanji"
-            android:layout_width="82dp"
-            android:layout_height="82dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/appslogo"
-            android:layout_marginLeft="20dp"/>
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/logotransparan"
+            android:layout_marginLeft="300dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Buat Janji"
+            android:text="Buat Permintaan Janji"
             android:textSize="40sp"
             android:layout_marginTop="35dp"
             android:layout_marginLeft="20dp"
@@ -43,15 +43,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="160dp">
 
-            <EditText
-                android:id="@+id/UsernameDocAppointment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="30dp"
-                android:layout_margin="10dp"
-                android:background="@android:color/transparent"
-                android:hint="Nama Pembuat Janji"
-                android:drawableLeft="@drawable/ic_person_black_24dp"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -149,51 +140,12 @@
             android:id="@+id/JanjiButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Buat Janji"
-            android:background="#75635f"
+            android:text="Buat Permintaan Janji"
+            android:background="@drawable/mybutton"
             android:textColor="#ffffff"
             android:layout_below="@+id/NotesKeluhan"/>
 
 
-        <TextView
-            android:id="@+id/sudahjanji"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sudah Punya janji?"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/JanjiButton"
-            android:textSize="18sp"
-            android:layout_marginTop="25dp"
-            android:fontFamily="sans-serif-light/"/>
-
-        <Button
-            android:id="@+id/CekButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cek Jadwal Saya"
-            android:background="#75635f"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/sudahjanji"/>
-
-        <Button
-            android:id="@+id/UpdateButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ubah Jadwal Saya"
-            android:layout_marginTop="20dp"
-            android:background="#75635f"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/CekButton"/>
-
-        <Button
-            android:id="@+id/DeleteButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Batalkan Janji Saya"
-            android:layout_marginTop="20dp"
-            android:background="#75635f"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/UpdateButton"/>
 
 
 

@@ -12,9 +12,10 @@
         android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:src="@drawable/appslogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="-40dp"
+        android:src="@drawable/logotransparan"
         android:layout_marginLeft="310dp"/>
 
 
@@ -39,6 +40,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp">
 
@@ -58,6 +60,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
             android:layout_marginTop="130dp">
 
             <EditText
@@ -79,8 +82,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Masuk"
-            android:background="#690505"
             android:textColor="#ffffff"
+            android:background="@drawable/mybutton"
             android:layout_marginTop="220dp"/>
     </RelativeLayout>
 
