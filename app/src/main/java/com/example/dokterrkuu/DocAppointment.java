@@ -366,8 +366,7 @@ public class DocAppointment extends AppCompatActivity {
 
         //METHOD FOR APPOINTMENT BUTTON
         AddData();
-        UpdateData();
-        deleteButton();
+
     }
 
     public void AddData(){
@@ -411,52 +410,6 @@ public class DocAppointment extends AppCompatActivity {
     }
 
 
-public void UpdateData(){
-        Update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Date date;
-                ArrayList<ModelClass> objModelClassArrayList;
-                //GET DROPDOWN VALUES
-                String diseaseValues = dropdown3.getSelectedItem().toString();
-                String dValues1 = dropdown.getSelectedItem().toString();
-                String dValues2 = dropdown2.getSelectedItem().toString();
-
-
-                DatePicker datePicker = (DatePicker) findViewById(R.id.tglReservasi);
-
-                date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
-                String valuedate = date.toString();
-                //String valuenama = uName.getText().toString();
-
-                if(uName.getText().toString().trim().length()!=0){
-                    Toast.makeText(DocAppointment.this, "Something Went Wrong, Update Failed, This Could Happen Because The Credential's Not Detected", Toast.LENGTH_SHORT).show();
-                }else{
-                    boolean isUpdated = databaseHelper.updateData(uName.getText().toString(), valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString() );
-                    if(isUpdated == true){
-                        Toast.makeText(DocAppointment.this, "Update Successful", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(DocAppointment.this, "Something Went Wrong, Update Failed, This Could Happen Because The Credential's Not Detected", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-            }
-        });
-}
-
-public void deleteButton(){
- Delete.setOnClickListener(new View.OnClickListener() {
-     @Override
-     public void onClick(View v) {
-         Integer deleteRows = databaseHelper.deleteData(uName.getText().toString());
-         if(deleteRows>0){
-             Toast.makeText(DocAppointment.this, "Data Successfuly Deleted", Toast.LENGTH_SHORT).show();
-         }else{
-             Toast.makeText(DocAppointment.this, "Failed to Delete The Data", Toast.LENGTH_SHORT).show();
-         }
-     }
- });
-}
 
 
 
