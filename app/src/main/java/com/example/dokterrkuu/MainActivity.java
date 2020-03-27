@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView c_jantung = findViewById(R.id.jantungklik);
         ImageView c_kuping = findViewById(R.id.kupingklik);
         ImageView c_tulang = findViewById(R.id.tulangklik);
-        ImageView c_profilepic = findViewById(R.id.ProfilePic);
 
 
 
@@ -100,14 +99,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent TulangKlik = new Intent (MainActivity.this, TulangActivity.class);
                 startActivity(TulangKlik);
-            }
-        });
-
-        c_profilepic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent FotoKlik = new Intent (MainActivity.this, UserProfile.class);
-                startActivity(FotoKlik);
             }
         });
 

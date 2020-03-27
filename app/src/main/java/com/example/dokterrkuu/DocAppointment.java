@@ -33,25 +33,25 @@ public class DocAppointment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_appointment);
 
-        Button btn1 = findViewById(R.id.CekButton);
+       // Button btn1 = findViewById(R.id.CekButton);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DocAppointment.this, ShowAppointment.class);
-                startActivity(intent);
-            }
-        });
+        //btn1.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+           // public void onClick(View v) {
+            //    Intent intent = new Intent(DocAppointment.this, ShowAppointment.class);
+             //   startActivity(intent);
+            //}
+      // });
 
         //CALLING DATABASEHELPER
         databaseHelper = new DatabaseHelper(this);
 
         //GET UI ID'S
-        uName = (EditText) findViewById(R.id.UsernameDocAppointment);
+        //uName = (EditText) findViewById(R.id.UsernameDocAppointment);
         uKeluh = (EditText) findViewById(R.id.NotesKeluhan);
         Janji = (Button) findViewById(R.id.JanjiButton);
-        Update = (Button) findViewById(R.id.UpdateButton);
-        Delete = (Button) findViewById(R.id.DeleteButton);
+        //Update = (Button) findViewById(R.id.UpdateButton);
+        //Delete = (Button) findViewById(R.id.DeleteButton);
         //GET SPINNER ID'S
         dropdown = findViewById(R.id.spinner1);
         dropdown2 = findViewById(R.id.spinner2);

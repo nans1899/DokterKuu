@@ -53,9 +53,14 @@ public class LoginActivity extends AppCompatActivity {
     {
         if( (userName.equals("Ananda Bakti")) && (userPassword.equals("1234")))
         {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, ActivityUtama.class);
             startActivity(intent);
-        }else
+        }
+        else if(userName.equals("") || userPassword.equals("")){
+            Toast.makeText(this, "Username or Password Cannot Be Empty !", Toast.LENGTH_SHORT).show();
+        }
+
+        else
         {
             Toast.makeText(this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
         }
