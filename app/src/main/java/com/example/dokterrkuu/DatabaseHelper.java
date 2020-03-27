@@ -13,12 +13,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "UserAppointmet.db";
     public static final String TABLE_NAME = "UsersAppointment";
-    public static final String COL_1 = "Username";
-    public static final String COL_2 = "Date";
-    public static final String COL_3 = "Disease";
-    public static final String COL_4 = "docName";
-    public static final String COL_5 = "hospital";
-    public static final String COL_6 = "notes";
+    public static final String COL_1 = "Date";
+    public static final String COL_2 = "Disease";
+    public static final String COL_3 = "docName";
+    public static final String COL_4 = "hospital";
+    public static final String COL_5 = "notes";
 
     Context context;
 
@@ -38,8 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + " VARCHAR(255)," + COL_3
                     + " VARCHAR(255)," + COL_4
                     + " VARCHAR(255)," + COL_5
-                    +" TEXT," + COL_6
-                    + " TEXT" + ")";
+                    +" TEXT)";
 
             db.execSQL(CREATE_APPOINTMENT_TABLE);
             Toast.makeText(context, "Table Created Successfuly", Toast.LENGTH_SHORT).show();
@@ -55,38 +53,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name, String Date,String disease,String docname, String hospital, String notes){
+    public boolean insertData(String Date,String disease,String docname, String hospital, String notes){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1, name);
-        contentValues.put(COL_2, Date);
-        contentValues.put(COL_3, disease);
-        contentValues.put(COL_4, docname);
-        contentValues.put(COL_5, hospital);
-        contentValues.put(COL_6, notes);
+        contentValues.put(COL_1, Date);
+        contentValues.put(COL_2, disease);
+        contentValues.put(COL_3, docname);
+        contentValues.put(COL_4, hospital);
+        contentValues.put(COL_5, notes);
         long result = db.insert(TABLE_NAME, null, contentValues);
 
         db.close();
         return true;
 
     }
-    public boolean updateData(String name, String date, String disease, String docname, String hospital, String notes){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1, name);
-        contentValues.put(COL_2, date);
-        contentValues.put(COL_3, disease);
-        contentValues.put(COL_4, docname);
-        contentValues.put(COL_5, hospital);
-        contentValues.put(COL_6, notes);
+  //  public boolean updateData(String name, String date, String disease, String docname, String hospital, String notes){
+  //      SQLiteDatabase db = this.getWritableDatabase();
+   //     ContentValues contentValues = new ContentValues();
+   //     contentValues.put(COL_1, name);
+    //    contentValues.put(COL_2, date);
+     //   contentValues.put(COL_3, disease);
+     //   contentValues.put(COL_4, docname);
+      //  contentValues.put(COL_5, hospital);
+      //  contentValues.put(COL_6, notes);
 
-        db.update(TABLE_NAME, contentValues,"Username = ?",new String[]{ name });
-        db.close();
-        return true;
-    }
-    public Integer deleteData(String uName){
-        SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, "Username = ?", new String[] {uName});
-    }
+        //db.update(TABLE_NAME, contentValues,"Username = ?",new String[]{ name });
+        //db.close();
+       //return true;
+   // }
+  //  public Integer deleteData(String uName){
+   //    SQLiteDatabase db = this.getWritableDatabase();
+   //     return db.delete(TABLE_NAME, "Username = ?", new String[] {uName});
+    //}
 
 }

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class DocAppointment extends AppCompatActivity {
 
     //INITIATE VARIABLES
-    EditText uName,uKeluh;
+    EditText uKeluh;
     Button Janji,Update, Delete;
     Spinner dropdown, dropdown2, dropdown3;
     DatabaseHelper databaseHelper;
@@ -399,7 +399,7 @@ public class DocAppointment extends AppCompatActivity {
                 date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
                 String valuedate = date.toString();
 
-                boolean isInserted = databaseHelper.insertData(uName.getText().toString(), valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString());
+                boolean isInserted = databaseHelper.insertData( valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString());
                 if(isInserted == true){
                     Toast.makeText(DocAppointment.this, "Data Successfuly inserted", Toast.LENGTH_SHORT).show();
                 }else{
