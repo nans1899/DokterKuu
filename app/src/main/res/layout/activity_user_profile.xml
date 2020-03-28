@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".UserProfileActivity">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile"
-        android:textSize="40sp"/>
+    android:id="@+id/textprofile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Profile"
+    android:textSize="60sp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/UserPic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="225dp"/>
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name"
+    android:layout_marginLeft="50dp"
+    android:layout_marginTop="400dp"
+    android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/namedisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="400dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="470dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/emaildisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="470dp"
+        android:textSize="30sp"/>
+
+<Button
+    android:id="@+id/logoutbutton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="550dp"
+    android:text="Log Out"
+    android:layout_marginLeft="225dp"/>
+
+
+
+
+</RelativeLayout>

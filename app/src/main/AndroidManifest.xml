@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dokterrkuu">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".GoogleSignIn"></activity>
+        <activity android:name=".activity_signinup" />
+        <activity android:name=".SettingActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".TulangActivity" />
@@ -24,7 +28,7 @@
         <activity android:name=".PengeheliatanActivity" />
         <activity android:name=".DocAppointment" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ActivityUtama"/>
+        <activity android:name=".ActivityUtama" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,6 +2,7 @@ package com.example.dokterrkuu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -39,6 +40,7 @@ public class SplashActivity extends AppCompatActivity {
         ProgressBarAnimation anim = new ProgressBarAnimation(this, progressBar, 0f,100f);
         anim.setDuration(5000);
         progressBar.setAnimation(anim);
+
     }
 
 

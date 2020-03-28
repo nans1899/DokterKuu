@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backlog"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="-40dp"
+            android:src="@drawable/logotransparan"
+            android:layout_marginLeft="310dp"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_margin="25dp">
+
+            <TextView
+                android:id="@+id/Login"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_above="@+id/sign_in_button"
+                android:text="Sign-In"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:layout_marginBottom="200dp" />
+
+
+
+            <Button
+                android:id="@+id/SignInUpEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/SignInUpFacebook"
+                android:background="@drawable/mybutton"
+                android:text="Sign-In With Email"
+                android:layout_marginTop="20dp"
+
+                android:textColor="#ffffff" />
+
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/SignInUpFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/sign_in_button"
+                android:background="@drawable/mybutton"
+                android:text="Sign-In With Facebook"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="#ffffff" />
+
+
+            <Button
+                android:id="@+id/LoginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log-In"
+                android:textColor="#ffffff"
+                android:background="@drawable/mybutton"
+                android:layout_marginTop="70dp"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
