@@ -19,7 +19,7 @@
             android:background="@drawable/me1"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="160dp"
             android:layout_marginLeft="140dp"/>
 
         <TextView
@@ -37,7 +37,7 @@
             android:text="Ananda Bakti"
             android:textColor="#000"
             android:layout_marginLeft="105dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="300dp"
             android:textSize="35sp" />
 
 
@@ -114,14 +114,6 @@
                     android:text="Jl Karet Gusuran III No 11A Karet, Setiabudi, DKI Jakarta"
                     android:textSize="15sp"/>
 
-                <Button
-                    android:id="@+id/logoutbutton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="70dp"
-                    android:text="Log Out"
-                    android:background="@drawable/mybutton1"
-                    android:layout_marginLeft="150dp"/>
             </LinearLayout>
 
     </ScrollView>

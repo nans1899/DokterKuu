@@ -15,7 +15,7 @@
         <activity android:name=".activity_signinup" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".UserProfileActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".SplashActivity" />
         <activity android:name=".TulangActivity" />
         <activity android:name=".single_row1" />
         <activity android:name=".PendengaranActivity" />
@@ -29,7 +29,7 @@
         <activity android:name=".DocAppointment" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ActivityUtama" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
