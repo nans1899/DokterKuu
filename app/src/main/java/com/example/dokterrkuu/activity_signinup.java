@@ -92,6 +92,7 @@ public class activity_signinup extends AppCompatActivity implements GoogleApiCli
                 Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
             }
         }
+
     }
 
     @Override
