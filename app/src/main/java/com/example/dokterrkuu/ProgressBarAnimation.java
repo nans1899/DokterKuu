@@ -32,7 +32,7 @@ public class ProgressBarAnimation extends Animation {
         progressBar.setProgress((int)value);
 
         if(value == to){
-            context.startActivity(new Intent(context, activity_signinup.class));
+            context.startActivity(new Intent(context, LoginActivity.class));
         }
 
 
