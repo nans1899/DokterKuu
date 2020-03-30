@@ -114,14 +114,6 @@
                     android:text="Jl Karet Gusuran III No 11A Karet, Setiabudi, DKI Jakarta"
                     android:textSize="15sp"/>
 
-                <Button
-                    android:id="@+id/logoutbutton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="70dp"
-                    android:text="Log Out"
-                    android:background="@drawable/mybutton1"
-                    android:layout_marginLeft="150dp"/>
             </LinearLayout>
 
     </ScrollView>
