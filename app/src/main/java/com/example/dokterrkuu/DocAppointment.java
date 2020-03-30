@@ -401,9 +401,11 @@ public class DocAppointment extends AppCompatActivity {
 
                 boolean isInserted = databaseHelper.insertData( valuedate, diseaseValues, dValues1, dValues2, uKeluh.getText().toString());
                 if(isInserted == true){
-                    Toast.makeText(DocAppointment.this, "Data Successfuly inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DocAppointment.this, "Permintaan Anda Berhasil Diteruskan", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(DocAppointment.this, ActivityUtama.class);
+                    startActivity(intent);
                 }else{
-                    Toast.makeText(DocAppointment.this, "Failed Inserting The Data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DocAppointment.this, "Gagal Meneruskan Permintaan Anda", Toast.LENGTH_SHORT).show();
                 }
             }
         });

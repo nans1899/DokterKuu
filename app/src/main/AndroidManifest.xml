@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.dokterrkuu">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,11 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GoogleSignIn"></activity>
-        <activity android:name=".activity_signinup" />
+        <activity android:name=".GoogleSignIn"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".activity_signinup"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity android:name=".SettingActivity" />
         <activity android:name=".UserProfileActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity android:name=".TulangActivity" />
         <activity android:name=".single_row1" />
         <activity android:name=".PendengaranActivity" />
@@ -28,8 +35,12 @@
         <activity android:name=".PengeheliatanActivity" />
         <activity android:name=".DocAppointment" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ActivityUtama" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".ActivityUtama"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
