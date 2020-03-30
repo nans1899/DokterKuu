@@ -19,7 +19,7 @@
             android:background="@drawable/me1"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="160dp"
             android:layout_marginLeft="140dp"/>
 
         <TextView
@@ -37,7 +37,7 @@
             android:text="Ananda Bakti"
             android:textColor="#000"
             android:layout_marginLeft="105dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="300dp"
             android:textSize="35sp" />
 
 
