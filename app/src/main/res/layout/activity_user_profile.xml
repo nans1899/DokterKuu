@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,83 +9,122 @@
     tools:context=".UserProfileActivity">
 
 
-    <ImageView
-        android:id="@+id/UserPic"
-        android:background="@drawable/me1"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="140dp"/>
+    <RelativeLayout
+        android:id="@+id/relativeatas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Jakarta, Indonesia"
-    android:layout_below="@+id/namedisplay"
-    android:layout_marginLeft="135dp"
-    android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/UserPic"
+            android:background="@drawable/me1"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="140dp"/>
 
-    <TextView
-        android:id="@+id/namedisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ananda Bakti"
-        android:textColor="#000"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="340dp"
-        android:textSize="35sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jakarta, Indonesia"
+            android:layout_below="@+id/namedisplay"
+            android:layout_marginLeft="135dp"
+            android:textSize="18sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textColor="#8deaf5"
-        android:layout_below="@id/namedisplay"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/namedisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ananda Bakti"
+            android:textColor="#000"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="340dp"
+            android:textSize="35sp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/namedisplay"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="69dp"
-        android:fontFamily="sans-serif"
-        android:editable="false"
-        android:text="Anandabakti@gmail.com"
-        android:textSize="15sp"/>
 
-    <TextView
-        android:id="@+id/emaildisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/namedisplay"
-        android:text="Nomor Telepon"
-        android:textColor="#8deaf5"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="130dp"
-        android:textSize="18sp"/>
+    </RelativeLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/namedisplay"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="147dp"
-        android:fontFamily="sans-serif"
-        android:editable="false"
-        android:text="081932688050"
-        android:textSize="15sp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeatas">
 
-<Button
-    android:id="@+id/logoutbutton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="650dp"
-    android:text="Log Out"
-    android:background="@drawable/mybutton1"
-    android:layout_marginLeft="150dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#8deaf5"
+                    android:layout_below="@id/namedisplay"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="50dp"
+                    android:textSize="18sp"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/namedisplay"
+                    android:layout_marginLeft="47dp"
+                    android:fontFamily="sans-serif"
+                    android:editable="false"
+                    android:text="Anandabakti@gmail.com"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/emaildisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/namedisplay"
+                    android:text="Nomor Telepon"
+                    android:textColor="#8deaf5"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18sp"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/namedisplay"
+                    android:layout_marginLeft="47dp"
+                    android:fontFamily="sans-serif"
+                    android:editable="false"
+                    android:text="081932688050"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/alamatdisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alamatdisplay"
+                    android:text="Alamat"
+                    android:textColor="#8deaf5"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18sp"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:fontFamily="sans-serif"
+                    android:editable="false"
+                    android:text="Jl Karet Gusuran III No 11A Karet, Setiabudi, DKI Jakarta"
+                    android:textSize="15sp"/>
+
+                <Button
+                    android:id="@+id/logoutbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:text="Log Out"
+                    android:background="@drawable/mybutton1"
+                    android:layout_marginLeft="150dp"/>
+            </LinearLayout>
+
+    </ScrollView>
 
 
 
