@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="vertical"
     android:background="@drawable/backprofile"
     tools:context=".UserProfileActivity">
 
@@ -15,7 +14,7 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="200dp"
-        android:layout_marginLeft="140" t/>
+        android:layout_marginLeft="140dp"/>
 
     <TextView
     android:layout_width="wrap_content"
@@ -54,7 +53,7 @@
         android:fontFamily="sans-serif"
         android:editable="false"
         android:text="Anandabakti@gmail.com"
-        android:textSize="15sp"
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/emaildisplay"
@@ -76,7 +75,7 @@
         android:fontFamily="sans-serif"
         android:editable="false"
         android:text="081932688050"
-        android:textSize="15sp"
+        android:textSize="15sp"/>
 
 <Button
     android:id="@+id/logoutbutton"
