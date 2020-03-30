@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,83 +8,99 @@
     tools:context=".LoginActivity">
 
     <RelativeLayout
+        android:id="@+id/bagatas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="-40dp"
-            android:src="@drawable/logotransparan"
-            android:layout_marginLeft="310dp"/>
-
-
-
-        <RelativeLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Metode Sign Up"
+            android:fontFamily="@font/opensans"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="150dp"/>
+    </RelativeLayout>
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_margin="25dp">
+            android:layout_below="@id/bagatas"
+            android:layout_marginTop="50dp">
 
-            <TextView
-                android:id="@+id/Login"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_above="@+id/sign_in_button"
-                android:text="Sign-In"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center"
-                android:layout_marginBottom="200dp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <GridLayout
+                    android:columnCount="2"
+                    android:rowCount="3"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
 
 
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:background="#3a559f"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/SignInUpEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/SignInUpFacebook"
-                android:background="@drawable/mybutton"
-                android:text="Sign-In With Email"
-                android:layout_marginTop="20dp"
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:src="@drawable/facebooklogo" />
 
-                android:textColor="#ffffff" />
+                    </LinearLayout>
 
+                </androidx.cardview.widget.CardView>
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/sign_in_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-            <Button
-                android:id="@+id/SignInUpFacebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/sign_in_button"
-                android:background="@drawable/mybutton"
-                android:text="Sign-In With Facebook"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:textColor="#ffffff" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="#f1f2e9"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:src="@drawable/googlelogo" />
 
-            <Button
-                android:id="@+id/LoginButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Log-In"
-                android:textColor="#ffffff"
-                android:background="@drawable/mybutton"
-                android:layout_marginTop="70dp"/>
+                    </LinearLayout>
 
-        </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                </GridLayout>
+            </LinearLayout>
+        </ScrollView>
 
-
-    </RelativeLayout>
-
-
-
-</LinearLayout>
+</RelativeLayout>
