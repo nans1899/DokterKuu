@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText Name;
     private EditText Password;
     private Button Login;
+    private TextView Signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +41,21 @@ public class LoginActivity extends AppCompatActivity {
         Name = (EditText)findViewById(R.id.Username);
         Password = (EditText)findViewById(R.id.Password);
         Login = (Button)findViewById(R.id.LogButt);
+        Signup = (TextView)findViewById(R.id.Signuptext);
+
+
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 Validate(Name.getText().toString(), Password.getText().toString());
+            }
+        });
+
+        Signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Pindah = new Intent (LoginActivity.this, activity_signinup.class);
+                startActivity(Pindah);
             }
         });
 
@@ -65,6 +78,4 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
         }
    }
-
-
 }
