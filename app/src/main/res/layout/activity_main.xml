@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,362 +8,358 @@
     android:background="@drawable/bgapps1"
     tools:context=".MainActivity">
 
-
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <RelativeLayout
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="30dp"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <TextView
-                android:id="@+id/txtdashboard"
-                android:textSize="22sp"
-                android:textColor="#000"
-                android:text="Apa Keluhanmu Hari Ini?"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_below="@id/txtdashboard"
-                android:layout_marginTop="3dp"
-                android:textSize="18sp"
-                android:text="Ananda?"
-                android:textColor="#c41b1b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <ImageView
-                android:id="@+id/ProfilePic"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/me1"
-                android:layout_width="62dp"
-                android:layout_height="62dp"/>
-
-        </RelativeLayout>
-
-        <GridLayout
-            android:columnCount="2"
-            android:rowCount="3"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:layout_height="wrap_content">
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/mataklik"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:src="@drawable/mata" />
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Pengheliatan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="159dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:id="@+id/gigiklik"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:src="@drawable/gigi" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Kesehatan Gigi"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/pernafasanklik"
-                        android:src="@drawable/paruparu"
-                        android:layout_width="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Pernafasan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/pencernaanKlik"
-                        android:src="@drawable/lambung"
-                        android:layout_width="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Pencernaan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/kepalaklik"
-                        android:src="@drawable/otak"
-                        android:layout_width="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Sakit Kepala"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/jantungklik"
-                        android:src="@drawable/hati"
-                        android:layout_width="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Kesehatan Jantung"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/kupingklik"
-                        android:src="@drawable/kuping"
-                        android:layout_width="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Pendengaran"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/tulangklik"
-                        android:src="@drawable/tulag"
-                        android:layout_width="80dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:textColor="#000000"
-                        android:layout_marginTop="12dp"
-                        android:textSize="18sp"
-                        android:text="Tulang"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-        </GridLayout>
-
-
-
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-</ScrollView>
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/txtdashboard"
+                    android:textSize="22sp"
+                    android:textColor="#000"
+                    android:text="Apa Keluhanmu Hari Ini?"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_below="@id/txtdashboard"
+                    android:layout_marginTop="3dp"
+                    android:textSize="18sp"
+                    android:text="Ananda?"
+                    android:textColor="#c41b1b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/ProfilePic"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/me1"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"/>
+
+            </RelativeLayout>
+
+            <GridLayout
+                android:columnCount="2"
+                android:rowCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/mataklik"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:src="@drawable/mata" />
+
+                        <TextView
+                            android:textColor="#000000"
+                            android:layout_marginTop="12dp"
+                            android:textSize="18sp"
+                            android:text="Pengheliatan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/gigiklik"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:src="@drawable/gigi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Kesehatan Gigi"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/pernafasanklik"
+                            android:src="@drawable/paruparu"
+                            android:layout_width="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:textColor="#000000"
+                            android:layout_marginTop="12dp"
+                            android:textSize="18sp"
+                            android:text="Pernafasan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/pencernaanKlik"
+                            android:src="@drawable/lambung"
+                            android:layout_width="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:textColor="#000000"
+                            android:layout_marginTop="12dp"
+                            android:textSize="18sp"
+                            android:text="Pencernaan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/kepalaklik"
+                            android:src="@drawable/otak"
+                            android:layout_width="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:textColor="#000000"
+                            android:layout_marginTop="12dp"
+                            android:textSize="18sp"
+                            android:text="Sakit Kepala"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/jantungklik"
+                            android:src="@drawable/hati"
+                            android:layout_width="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:textColor="#000000"
+                            android:layout_marginTop="12dp"
+                            android:textSize="18sp"
+                            android:text="Kesehatan Jantung"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/kupingklik"
+                            android:src="@drawable/kuping"
+                            android:layout_width="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:textColor="#000000"
+                            android:layout_marginTop="12dp"
+                            android:textSize="18sp"
+                            android:text="Pendengaran"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_margin="12dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/tulangklik"
+                            android:src="@drawable/tulag"
+                            android:layout_width="80dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_height="80dp"/>
+
+                        <TextView
+                            android:textColor="#000000"
+                            android:layout_marginTop="12dp"
+                            android:textSize="18sp"
+                            android:text="Tulang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+            </GridLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>
 
 
