@@ -62,7 +62,7 @@ public class EmailSignIn extends AppCompatActivity {
                 }else if(txt_password.length() < 8){
                     Toast.makeText(EmailSignIn.this, "Password Must be at Least 8 Characters", Toast.LENGTH_SHORT).show();
                 }else{
-                    register(txt_email, txt_password, txt_user);
+                    register(txt_user, txt_email, txt_password);
                 }
 
 
@@ -89,13 +89,17 @@ public class EmailSignIn extends AppCompatActivity {
                             HashMap<String, String> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
+                            hashMap.put("email", email);
                             hashMap.put("imageURL", "default");
+                            hashMap.put("Phone", "Belum Terisi");
+                            hashMap.put("Address", "Belum Terisi");
 
                             reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Intent intent = new Intent(EmailSignIn.this, LoginActivity.class);
+                                        Toast.makeText(EmailSignIn.this, "Register Success, You'll be Redirect to Login Page", Toast.LENGTH_SHORT).show();
                                         startActivity(intent);
                                         finish();
                                     }

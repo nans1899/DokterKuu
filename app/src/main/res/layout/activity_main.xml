@@ -38,7 +38,7 @@
                     android:layout_below="@id/txtdashboard"
                     android:layout_marginTop="3dp"
                     android:textSize="18sp"
-                    android:text="Ananda?"
+                    android:id="@+id/namauser"
                     android:textColor="#c41b1b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -46,7 +46,6 @@
                 <ImageView
                     android:id="@+id/ProfilePic"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/me1"
                     android:layout_width="62dp"
                     android:layout_height="62dp"/>
 

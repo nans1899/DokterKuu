@@ -16,7 +16,6 @@
 
         <ImageView
             android:id="@+id/UserPic"
-            android:background="@drawable/me1"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginTop="160dp"
@@ -34,7 +33,6 @@
             android:id="@+id/namedisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ananda Bakti"
             android:textColor="#000"
             android:layout_marginLeft="105dp"
             android:layout_marginTop="300dp"
@@ -70,7 +68,7 @@
                     android:layout_marginLeft="47dp"
                     android:fontFamily="sans-serif"
                     android:editable="false"
-                    android:text="Anandabakti@gmail.com"
+                    android:id="@+id/emailuser"
                     android:textSize="15sp"/>
 
                 <TextView
@@ -91,7 +89,7 @@
                     android:layout_marginLeft="47dp"
                     android:fontFamily="sans-serif"
                     android:editable="false"
-                    android:text="081932688050"
+                    android:id="@+id/hpuser"
                     android:textSize="15sp"/>
 
                 <TextView
@@ -111,7 +109,7 @@
                     android:layout_marginLeft="47dp"
                     android:fontFamily="sans-serif"
                     android:editable="false"
-                    android:text="Jl Karet Gusuran III No 11A Karet, Setiabudi, DKI Jakarta"
+                    android:id="@+id/alamatuser"
                     android:textSize="15sp"/>
 
             </LinearLayout>

@@ -46,4 +46,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.4.1'
     implementation 'com.google.firebase:firebase-storage:19.1.1'
 
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+
 }

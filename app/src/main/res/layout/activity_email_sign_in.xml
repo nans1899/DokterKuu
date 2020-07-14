@@ -52,8 +52,7 @@
                     android:background="@android:color/transparent"
                     android:hint="Username"
                     android:clickable="true"
-                    android:inputType="textPassword"
-                    android:drawableLeft="@drawable/ic_lock_black_24dp"/>
+                    android:drawableLeft="@drawable/ic_person_black_24dp"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -73,7 +72,7 @@
                     android:background="@android:color/transparent"
                     android:hint="E-mail"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/ic_person_black_24dp"/>
+                    android:drawableLeft="@drawable/ic_email_black_24dp"/>
 
             </androidx.cardview.widget.CardView>
 

@@ -67,7 +67,6 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
                             android:src="@mipmap/ic_mail"/>
 
                     </LinearLayout>
@@ -97,7 +96,6 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
                             android:src="@drawable/googlelogo" />
 
                     </LinearLayout>

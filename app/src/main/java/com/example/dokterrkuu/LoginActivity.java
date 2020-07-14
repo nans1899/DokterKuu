@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                        @Override
                        public void onComplete(@NonNull Task<AuthResult> task) {
                            if(task.isSuccessful()){
-                               Intent intent  = new Intent(LoginActivity.this, MainActivity.class);
+                               Intent intent  = new Intent(LoginActivity.this, ActivityUtama.class);
                                startActivity(intent);
                                finish();
                            }else{

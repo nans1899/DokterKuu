@@ -1,5 +1,6 @@
 package com.example.dokterrkuu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -9,8 +10,24 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.dokterrkuu.Model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class MainActivity extends AppCompatActivity {
 
+
+    TextView uName;
+    ImageView ProfPic;
+
+    FirebaseUser firebaseUser;
+    DatabaseReference reference;
 
 
     @Override
@@ -26,6 +43,30 @@ public class MainActivity extends AppCompatActivity {
         ImageView c_kuping = findViewById(R.id.kupingklik);
         ImageView c_tulang = findViewById(R.id.tulangklik);
 
+
+        uName = findViewById(R.id.namauser);
+        ProfPic = findViewById(R.id.ProfilePic);
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                uName.setText(user.getUsername());
+                if(user.getImageURL().equals("default")){
+                    ProfPic.setImageResource(R.mipmap.ic_default_pic);
+                }else{
+                    Glide.with(getApplicationContext()).load(user.getImageURL()).into(ProfPic);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
 

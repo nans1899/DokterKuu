@@ -411,6 +411,10 @@ public class DocAppointment extends AppCompatActivity {
         });
     }
 
+    public void createAppointment(){
+
+    }
+
 
 
 

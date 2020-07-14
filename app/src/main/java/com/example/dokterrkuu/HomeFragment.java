@@ -6,12 +6,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.example.dokterrkuu.Model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class HomeFragment extends Fragment {
+
+    TextView uName;
+    ImageView ProfPic;
+
+    FirebaseUser firebaseUser;
+    DatabaseReference reference;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,6 +46,31 @@ public class HomeFragment extends Fragment {
         ImageView c_jantung = (ImageView) rootView.findViewById(R.id.jantungklik);
         ImageView c_kuping = (ImageView) rootView.findViewById(R.id.kupingklik);
         ImageView c_tulang = (ImageView) rootView.findViewById(R.id.tulangklik);
+
+
+        uName = rootView.findViewById(R.id.namauser);
+        ProfPic = rootView.findViewById(R.id.ProfilePic);
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                uName.setText(user.getUsername());
+                if(user.getImageURL().equals("default")){
+                    ProfPic.setImageResource(R.mipmap.ic_default_pic);
+                }else{
+                    Glide.with(getContext()).load(user.getImageURL()).into(ProfPic);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         c_mata.setOnClickListener(new View.OnClickListener() {
