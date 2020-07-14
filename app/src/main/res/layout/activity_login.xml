@@ -51,7 +51,7 @@
                 android:drawablePadding="30dp"
                 android:layout_margin="10dp"
                 android:background="@android:color/transparent"
-                android:hint="Nama Pengguna"
+                android:hint="Email Pengguna"
                 android:clickable="true"
                 android:drawableLeft="@drawable/ic_person_black_24dp"/>
 

@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
 //    EditText user,pass;
 //    Button log;
-//    FirebaseAuth firebaseAuth;
+    FirebaseAuth firebaseAuth;
     private EditText Name;
     private EditText Password;
     private Button Login;
@@ -43,12 +43,12 @@ public class LoginActivity extends AppCompatActivity {
         Login = (Button)findViewById(R.id.LogButt);
         Signup = (TextView)findViewById(R.id.Signuptext);
 
-
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                Validate(Name.getText().toString(), Password.getText().toString());
+                authFirebase();
             }
         });
 
@@ -80,4 +80,39 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
         }
    }
+
+   private void authFirebase(){
+
+        EditText username = findViewById(R.id.Username);
+        EditText password = findViewById(R.id.Password);
+
+        String uName = username.getText().toString();
+        String uPass = password.getText().toString();
+
+       if(TextUtils.isEmpty(uName) || TextUtils.isEmpty(uPass)){
+           Toast.makeText(this, "All Fields Required", Toast.LENGTH_SHORT).show();
+       }else{
+           firebaseAuth = FirebaseAuth.getInstance();
+
+           firebaseAuth.signInWithEmailAndPassword(uName, uPass)
+                   .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                       @Override
+                       public void onComplete(@NonNull Task<AuthResult> task) {
+                           if(task.isSuccessful()){
+                               Intent intent  = new Intent(LoginActivity.this, MainActivity.class);
+                               startActivity(intent);
+                               finish();
+                           }else{
+                               Toast.makeText(LoginActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                           }
+                       }
+                   });
+
+       }
+
+
+
+   }
+
+
 }

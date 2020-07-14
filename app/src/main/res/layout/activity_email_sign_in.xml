@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backlog"
-    tools:context=".LoginActivity">
+    tools:context=".EmailSignIn">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,21 +30,42 @@
                 android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login With Google"
+                android:text="Sign Up With Email"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="#000"
                 android:fontFamily="sans-serif-light"
-                android:layout_marginBottom="220dp"/>
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="50dp">
+
+                <EditText
+                    android:id="@+id/Username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Username"
+                    android:clickable="true"
+                    android:inputType="textPassword"
+                    android:drawableLeft="@drawable/ic_lock_black_24dp"/>
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 app:cardCornerRadius="10dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp">
+                android:layout_marginTop="105dp"
+                >
 
                 <EditText
-                    android:id="@+id/Username"
+                    android:id="@+id/Email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="30dp"
@@ -60,7 +81,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
-                android:layout_marginTop="130dp">
+                android:layout_marginTop="160dp"
+                >
 
                 <EditText
                     android:id="@+id/Password"
@@ -72,15 +94,16 @@
                     android:hint="Kata Sandi"
                     android:clickable="true"
                     android:inputType="textPassword"
+
                     android:drawableLeft="@drawable/ic_lock_black_24dp"/>
 
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/SignButtonGoogle"
+                android:id="@+id/buttonDaftar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Masuk"
+                android:text="Daftar"
                 android:textColor="#ffffff"
                 android:background="@drawable/mybutton"
                 android:layout_marginTop="220dp"/>

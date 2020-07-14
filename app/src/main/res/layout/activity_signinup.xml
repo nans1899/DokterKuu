@@ -50,6 +50,8 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:id="@+id/emailCard"
                     android:layout_width="wrap_content">
 
 
@@ -66,7 +68,7 @@
                             android:layout_height="80dp"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
-                            android:src="@drawable/facebooklogo" />
+                            android:src="@mipmap/ic_mail"/>
 
                     </LinearLayout>
 
@@ -78,6 +80,8 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
+                    android:clickable="true"
+                    android:id="@+id/googleCard"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
 
@@ -100,6 +104,8 @@
 
                 </androidx.cardview.widget.CardView>
                 </GridLayout>
+
+
             </LinearLayout>
         </ScrollView>
 
