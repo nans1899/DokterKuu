@@ -14,19 +14,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/UserPic"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginTop="160dp"
-            android:layout_marginLeft="140dp"/>
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Jakarta, Indonesia"
             android:layout_below="@+id/namedisplay"
-            android:layout_marginLeft="135dp"
+            android:layout_centerHorizontal="true"
             android:textSize="18sp" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000"
-            android:layout_marginLeft="105dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="300dp"
             android:textSize="35sp" />
 

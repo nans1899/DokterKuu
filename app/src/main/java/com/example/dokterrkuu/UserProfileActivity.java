@@ -48,7 +48,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
-public class UserProfileActivity extends AppCompatActivity {
+public class    UserProfileActivity extends AppCompatActivity {
 
     ImageView profpic;
     TextView textnama;
