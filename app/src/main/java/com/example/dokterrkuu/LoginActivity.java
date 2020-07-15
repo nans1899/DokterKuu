@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText Name;
     private EditText Password;
     private Button Login;
-    private TextView Signup;
+    private TextView Signup, forgotPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         Name = (EditText)findViewById(R.id.Username);
         Password = (EditText)findViewById(R.id.Password);
         Login = (Button)findViewById(R.id.LogButt);
+        forgotPass = (TextView) findViewById(R.id.forgotPassword);
         Signup = (TextView)findViewById(R.id.Signuptext);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -49,6 +50,15 @@ public class LoginActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 authFirebase();
+            }
+        });
+
+
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(LoginActivity.this, ResetPassword.class);
+                startActivity(intent);
             }
         });
 
