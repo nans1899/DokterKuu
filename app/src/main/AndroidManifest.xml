@@ -12,17 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmailSignIn"
+        <activity android:name=".ResetPassword"></activity>
+        <activity
+            android:name=".EmailSignIn"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name=".activity_signinup"
+        <activity
+            android:name=".activity_signinup"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".UserProfileActivity" />
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity android:name=".TulangActivity" />
         <activity android:name=".single_row1" />
         <activity android:name=".PendengaranActivity" />
@@ -35,10 +39,12 @@
         <activity android:name=".PengeheliatanActivity" />
         <activity android:name=".DocAppointment" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ActivityUtama"
+        <activity
+            android:name=".ActivityUtama"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".SplashActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".SplashActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
