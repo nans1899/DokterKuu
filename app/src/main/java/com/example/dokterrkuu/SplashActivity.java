@@ -11,12 +11,33 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SplashActivity extends AppCompatActivity {
 
 
     ProgressBar progressBar;
 
+    FirebaseUser firebaseUser;
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        //NULL CHECKER
+        if(firebaseUser != null){
+            Intent intent = new Intent(SplashActivity.this, ActivityUtama.class);
+            startActivity(intent);
+            finish();
+        }else{
+            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

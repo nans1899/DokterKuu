@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ public class ProfileFragment extends Fragment {
     ImageView profpic;
     TextView textnama;
     EditText Emailuser, Hpuser, Alamatuser;
+    Button buttonLogout;
 
     DatabaseReference reference;
     FirebaseUser fuser;
@@ -66,6 +68,8 @@ public class ProfileFragment extends Fragment {
         Emailuser = view.findViewById(R.id.emailuser);
         Hpuser = view.findViewById(R.id.hpuser);
         Alamatuser = view.findViewById(R.id.alamatuser);
+        buttonLogout = view.findViewById(R.id.logoutbutton);
+
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
 
@@ -102,6 +106,14 @@ public class ProfileFragment extends Fragment {
         });
 
 
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getContext(), LoginActivity.class));
+            }
+        });
+
     return view;
     }
 
@@ -133,7 +145,10 @@ public class ProfileFragment extends Fragment {
             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
                 public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                    throw task.getException();
+                    if(!task.isSuccessful()){
+                        throw task.getException();
+                    }
+                    return fileReference.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
@@ -150,6 +165,9 @@ public class ProfileFragment extends Fragment {
 
                         pd.dismiss();
 
+                    }else{
+                        Toast.makeText(getContext(), "Failed to Upload", Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
