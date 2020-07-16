@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView c_jantung = findViewById(R.id.jantungklik);
         ImageView c_kuping = findViewById(R.id.kupingklik);
         ImageView c_tulang = findViewById(R.id.tulangklik);
+        CircleImageView c_profil = findViewById(R.id.ProfilePic);
 
 
         uName = findViewById(R.id.namauser);
@@ -138,8 +141,16 @@ public class MainActivity extends AppCompatActivity {
         c_tulang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent TulangKlik = new Intent (MainActivity.this, TulangActivity.class);
+                Intent TulangKlik = new Intent (MainActivity.this, UserProfileActivity.class);
                 startActivity(TulangKlik);
+            }
+        });
+
+        c_profil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ProfilKlik = new Intent (MainActivity.this, UserProfileActivity.class);
+                startActivity(ProfilKlik);
             }
         });
 

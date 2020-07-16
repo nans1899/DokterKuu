@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgapps1"
+    tools:context=".CurrentAppointment">
+
+
+    <RelativeLayout
+        android:id="@+id/janjiatas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_people_outline_white_24dp"
+            android:layout_marginLeft="360dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Janji Saya"
+            android:fontFamily="@font/opensans"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#fff"
+            android:textSize="40sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/janjiatas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="12dp"
+            android:background="#ced1d6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/namapengguna1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="20sp"
+                    android:text="Nama Pembuat Janji"/>
+                <TextView
+                    android:id="@+id/namapengguna2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:text="test"/>
+                <TextView
+                    android:id="@+id/disease1"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="20sp"
+                    android:text="Spesialisasi"/>
+                <TextView
+                    android:id="@+id/disease2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:text="test"/>
+                <TextView
+                    android:id="@+id/hospital1"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="20sp"
+                    android:text="Rumah Sakit"/>
+                <TextView
+                    android:id="@+id/hospital2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:text="test"/>
+                <TextView
+                    android:id="@+id/dokter1"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="20sp"
+                    android:text="Nama Dokter"/>
+                <TextView
+                    android:id="@+id/dokter2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:text="test"/>
+                <TextView
+                    android:id="@+id/tanggal1"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="20sp"
+                    android:text="Tanggal Janji"/>
+                <TextView
+                    android:id="@+id/tanggal2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:text="test"/>
+                <Button
+                    android:id="@+id/UbahJanji"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reschedule Permintaan Janji"
+                    android:background="@drawable/mybutton"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
