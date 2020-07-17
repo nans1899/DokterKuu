@@ -5,19 +5,256 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgapps1"
     tools:context=".ArticlesActivity">
 
 
     <RelativeLayout
+        android:id="@+id/artikelatas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_apps_white_24dp"
+            android:layout_marginLeft="360dp"
+            android:layout_marginTop="10dp"/>
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height= "wrap_content"
-            android:text="Untuk Artikel"
-            android:textSize="30sp"/>
+            android:layout_height="wrap_content"
+            android:text="Artikel Terbaru"
+            android:fontFamily="@font/opensans"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#fff"
+            android:textSize="40sp"/>
     </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/artikelatas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="12dp"
+            android:background="#ced1d6">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/articleimage"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"/>
+
+                <LinearLayout
+                    android:layout_toRightOf="@id/articleimage"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:id="@+id/judulartikel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans"
+                        android:textSize="20sp"
+                        android:text="Judul Artikel"/>
+
+                    <TextView
+                        android:id="@+id/isiartikel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="Preview Artikel"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="12dp"
+                android:background="#ced1d6">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/articleimage"
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"/>
+
+                    <LinearLayout
+                        android:layout_toRightOf="@id/articleimage"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="100dp">
+
+                        <TextView
+                            android:id="@+id/judulartikel1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="20sp"
+                            android:text="Judul Artikel"/>
+
+                        <TextView
+                            android:id="@+id/isiartikel1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="Preview Artikel"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="12dp"
+                android:background="#ced1d6">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/articleimage"
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"/>
+
+                    <LinearLayout
+                        android:layout_toRightOf="@id/articleimage"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="100dp">
+
+                        <TextView
+                            android:id="@+id/judulartikel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="20sp"
+                            android:text="Judul Artikel"/>
+
+                        <TextView
+                            android:id="@+id/isiartikel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="Preview Artikel"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="12dp"
+                android:background="#ced1d6">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/articleimage"
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"/>
+
+                    <LinearLayout
+                        android:layout_toRightOf="@id/articleimage"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="100dp">
+
+                        <TextView
+                            android:id="@+id/judulartikel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="20sp"
+                            android:text="Judul Artikel"/>
+
+                        <TextView
+                            android:id="@+id/isiartikel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="Preview Artikel"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="12dp"
+                android:background="#ced1d6">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/articleimage"
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"/>
+
+                    <LinearLayout
+                        android:layout_toRightOf="@id/articleimage"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="100dp">
+
+                        <TextView
+                            android:id="@+id/judulartikel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="20sp"
+                            android:text="Judul Artikel"/>
+
+                        <TextView
+                            android:id="@+id/isiartikel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="Preview Artikel"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

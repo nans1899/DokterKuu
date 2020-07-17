@@ -39,11 +39,11 @@ public class ActivityUtama extends AppCompatActivity implements GoogleApiClient.
                         case R.id.nav_articles:
                             selectedFragment = new ArticlesActivity();
                             break;
-                        case R.id.nav_setting:
-                            selectedFragment = new SettingFragment();
-                            break;
                         case R.id.nav_appointment:
                             selectedFragment = new CurrentAppointment();
+                            break;
+                        case R.id.nav_setting:
+                            selectedFragment = new SettingFragment();
                             break;
                         case R.id.nav_profile:
                             selectedFragment = new ProfileFragment();
