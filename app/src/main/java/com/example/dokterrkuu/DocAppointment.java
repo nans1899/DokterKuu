@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.dokterrkuu.Model.AppointmentData;
 import com.example.dokterrkuu.Model.User;
 import com.example.dokterrkuu.RecyclerViewPackage.ModelClass;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -74,7 +75,7 @@ public class DocAppointment extends AppCompatActivity {
         //uName = (EditText) findViewById(R.id.UsernameDocAppointment);
         uKeluh = (EditText) findViewById(R.id.NotesKeluhan);
         Janji = (Button) findViewById(R.id.JanjiButton);
-        Update = (Button) findViewById(R.id.ReplaceButton);
+        Update = (Button) findViewById(R.id.UbahButton);
         //Delete = (Button) findViewById(R.id.DeleteButton);
         //GET SPINNER ID'S
         dropdown = findViewById(R.id.spinner1);
@@ -469,18 +470,131 @@ public class DocAppointment extends AppCompatActivity {
     public void createAppointment(){
                 fuser = FirebaseAuth.getInstance().getCurrentUser();
                 assert fuser != null;
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
                 databaseReference = FirebaseDatabase.getInstance().getReference("Appointments").child(fuser.getUid());
 
                 final String userid = fuser.getUid();
 
-                reference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull final DataSnapshot dSnapshot) {
+
                         databaseReference.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                AppointmentData appointmentData = dataSnapshot.getValue(AppointmentData.class);
+
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+
+                                reference.addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dSnapshot) {
+                                        final User user = dSnapshot.getValue(User.class);
+                                        Date date;
+                                        DatePicker datePicker = (DatePicker) findViewById(R.id.tglReservasi);
+                                        date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
+                                        String valuedate = date.toString();
+                                        String name = user.getUsername();
+                                        String keluhan = uKeluh.getText().toString();
+                                        String penyakit = dropdown3.getSelectedItem().toString();
+                                        String dokter = dropdown.getSelectedItem().toString();
+                                        String rumahsakit = dropdown2.getSelectedItem().toString();
+
+
+                                        if(keluhan == null){
+                                            HashMap<String, String> hashMap = new HashMap<>();
+                                            hashMap.put("id", userid);
+                                            hashMap.put("Username", name);
+                                            hashMap.put("Date", valuedate);
+                                            hashMap.put("Disease", penyakit);
+                                            hashMap.put("Doctor", dokter);
+                                            hashMap.put("Hospital", rumahsakit);
+                                            hashMap.put("Comment", "Tidak ada keluhan");
+
+                                            databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText(DocAppointment.this, "Appointment Berhasil Dibuat", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(DocAppointment.this, ActivityUtama.class);
+                                                        startActivity(intent);
+                                                    }else{
+                                                        Toast.makeText(DocAppointment.this, "Appointment Tidak Berhasil Dibuat", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
+                                            });
+                                        }else{
+                                            String adakeluhan = uKeluh.getText().toString();
+                                            HashMap<String, String> hashMap = new HashMap<>();
+                                            hashMap.put("id", userid);
+                                            hashMap.put("Username", name);
+                                            hashMap.put("Date", valuedate);
+                                            hashMap.put("Disease", penyakit);
+                                            hashMap.put("Doctor", dokter);
+                                            hashMap.put("Hospital", rumahsakit);
+                                            hashMap.put("Comment", adakeluhan);
+
+                                            databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText(DocAppointment.this, "Appointment Berhasil Dibuat", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(DocAppointment.this, ActivityUtama.class);
+                                                        startActivity(intent);
+                                                    }else{
+                                                        Toast.makeText(DocAppointment.this, "Appointment Tidak Berhasil Dibuat", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
+
+                                }
+
+
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+
+
+
+
+
+
+
+
+    }
+
+    public void Reschedule(){
+        fuser = FirebaseAuth.getInstance().getCurrentUser();
+        assert fuser != null;
+        databaseReference = FirebaseDatabase.getInstance().getReference("Appointments").child(fuser.getUid());
+
+        final String userid = fuser.getUid();
+        final String username = fuser.getDisplayName();
+
+                //PUTTING THE APPOINTMENTS DATA
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        AppointmentData appointmentData = dataSnapshot.getValue(AppointmentData.class);
+
+                        //GET USERNAME FROM USER TABLE
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+                        reference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dSnapshot) {
+
                                 User user = dSnapshot.getValue(User.class);
+                                if (userid.equals(null)) {
+                                    Toast.makeText(DocAppointment.this, "Anda Belum membuat Appointment", Toast.LENGTH_SHORT).show();
+                                } else {
                                     Date date;
                                     DatePicker datePicker = (DatePicker) findViewById(R.id.tglReservasi);
                                     date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
@@ -492,8 +606,8 @@ public class DocAppointment extends AppCompatActivity {
                                     String rumahsakit = dropdown2.getSelectedItem().toString();
 
 
-                                    if(keluhan == ""){
-                                        keluhan = "Tidak ada keluhan";
+                                    if (keluhan == null) {
+
                                         HashMap<String, String> hashMap = new HashMap<>();
                                         hashMap.put("id", userid);
                                         hashMap.put("Username", name);
@@ -501,21 +615,21 @@ public class DocAppointment extends AppCompatActivity {
                                         hashMap.put("Disease", penyakit);
                                         hashMap.put("Doctor", dokter);
                                         hashMap.put("Hospital", rumahsakit);
-                                        hashMap.put("Comment", keluhan);
+                                        hashMap.put("Comment", "Tidak ada keluhan");
 
                                         databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
-                                                if(task.isSuccessful()){
-                                                    Toast.makeText(DocAppointment.this, "Appointment Berhasil Dibuat", Toast.LENGTH_SHORT).show();
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(DocAppointment.this, "Appointment Berhasil Diubah", Toast.LENGTH_SHORT).show();
                                                     Intent intent = new Intent(DocAppointment.this, ActivityUtama.class);
                                                     startActivity(intent);
-                                                }else{
-                                                    Toast.makeText(DocAppointment.this, "Appointment Tidak Berhasil Dibuat", Toast.LENGTH_SHORT).show();
+                                                } else {
+                                                    Toast.makeText(DocAppointment.this, "Appointment Tidak Berhasil Diubah", Toast.LENGTH_SHORT).show();
                                                 }
                                             }
                                         });
-                                    }else{
+                                    } else {
                                         String adakeluhan = uKeluh.getText().toString();
                                         HashMap<String, String> hashMap = new HashMap<>();
                                         hashMap.put("id", userid);
@@ -529,19 +643,20 @@ public class DocAppointment extends AppCompatActivity {
                                         databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
-                                                if(task.isSuccessful()){
+                                                if (task.isSuccessful()) {
                                                     Toast.makeText(DocAppointment.this, "Appointment Berhasil Dibuat", Toast.LENGTH_SHORT).show();
                                                     Intent intent = new Intent(DocAppointment.this, ActivityUtama.class);
                                                     startActivity(intent);
-                                                }else{
+                                                } else {
                                                     Toast.makeText(DocAppointment.this, "Appointment Tidak Berhasil Dibuat", Toast.LENGTH_SHORT).show();
                                                 }
                                             }
                                         });
                                     }
+
+
                                 }
-
-
+                            }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -556,108 +671,6 @@ public class DocAppointment extends AppCompatActivity {
                     }
                 });
 
-
-
-
-
-
-
-
-    }
-
-    public void Reschedule(){
-        fuser = FirebaseAuth.getInstance().getCurrentUser();
-        assert fuser != null;
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
-        databaseReference = FirebaseDatabase.getInstance().getReference("Appointments").child(fuser.getUid());
-
-        final String userid = fuser.getUid();
-
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull final DataSnapshot dSnapshot) {
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        User user = dSnapshot.getValue(User.class);
-                        if (userid.equals(null)) {
-                            Toast.makeText(DocAppointment.this, "Anda Belum membuat Appointment", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Date date;
-                            DatePicker datePicker = (DatePicker) findViewById(R.id.tglReservasi);
-                            date = new Date(datePicker.getYear() - 1900, datePicker.getMonth(), datePicker.getDayOfMonth());
-                            String valuedate = date.toString();
-                            String name = user.getUsername();
-                            String keluhan = uKeluh.getText().toString();
-                            String penyakit = dropdown3.getSelectedItem().toString();
-                            String dokter = dropdown.getSelectedItem().toString();
-                            String rumahsakit = dropdown2.getSelectedItem().toString();
-
-
-                            if (keluhan == "") {
-                                keluhan = "Tidak ada keluhan";
-                                HashMap<String, String> hashMap = new HashMap<>();
-                                hashMap.put("id", userid);
-                                hashMap.put("Username", name);
-                                hashMap.put("Date", valuedate);
-                                hashMap.put("Disease", penyakit);
-                                hashMap.put("Doctor", dokter);
-                                hashMap.put("Hospital", rumahsakit);
-                                hashMap.put("Comment", keluhan);
-
-                                databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            Toast.makeText(DocAppointment.this, "Appointment Berhasil Dibuat", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(DocAppointment.this, ActivityUtama.class);
-                                            startActivity(intent);
-                                        } else {
-                                            Toast.makeText(DocAppointment.this, "Appointment Tidak Berhasil Dibuat", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            } else {
-                                String adakeluhan = uKeluh.getText().toString();
-                                HashMap<String, String> hashMap = new HashMap<>();
-                                hashMap.put("id", userid);
-                                hashMap.put("Username", name);
-                                hashMap.put("Date", valuedate);
-                                hashMap.put("Disease", penyakit);
-                                hashMap.put("Doctor", dokter);
-                                hashMap.put("Hospital", rumahsakit);
-                                hashMap.put("Comment", adakeluhan);
-
-                                databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            Toast.makeText(DocAppointment.this, "Appointment Berhasil Dibuat", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(DocAppointment.this, ActivityUtama.class);
-                                            startActivity(intent);
-                                        } else {
-                                            Toast.makeText(DocAppointment.this, "Appointment Tidak Berhasil Dibuat", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            }
-
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
 

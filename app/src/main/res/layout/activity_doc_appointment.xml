@@ -146,10 +146,10 @@
             android:layout_below="@+id/NotesKeluhan"/>
 
         <Button
-            android:id="@+id/ReplaceButton"
+            android:id="@+id/UbahButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Reschedule Permintaan Janji"
+            android:text="Ubah Permintaan Janji"
             android:background="@drawable/mybutton"
             android:layout_marginTop="15dp"
             android:textColor="#ffffff"

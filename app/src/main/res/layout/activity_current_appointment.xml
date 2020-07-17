@@ -64,11 +64,11 @@
                     android:textSize="20sp"
                     android:text="Nama Pembuat Janji"/>
                 <TextView
-                    android:id="@+id/namapengguna2"
+                    android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="18sp"
-                    android:text="test"/>
+                    />
                 <TextView
                     android:id="@+id/disease1"
                     android:layout_marginTop="10dp"
@@ -78,11 +78,11 @@
                     android:textSize="20sp"
                     android:text="Spesialisasi"/>
                 <TextView
-                    android:id="@+id/disease2"
+                    android:id="@+id/userdisease"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="18sp"
-                    android:text="test"/>
+                    />
                 <TextView
                     android:id="@+id/hospital1"
                     android:layout_marginTop="10dp"
@@ -92,11 +92,11 @@
                     android:textSize="20sp"
                     android:text="Rumah Sakit"/>
                 <TextView
-                    android:id="@+id/hospital2"
+                    android:id="@+id/selectedhospital"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="18sp"
-                    android:text="test"/>
+                    />
                 <TextView
                     android:id="@+id/dokter1"
                     android:layout_marginTop="10dp"
@@ -106,11 +106,11 @@
                     android:textSize="20sp"
                     android:text="Nama Dokter"/>
                 <TextView
-                    android:id="@+id/dokter2"
+                    android:id="@+id/selecteddoc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="18sp"
-                    android:text="test"/>
+                    />
                 <TextView
                     android:id="@+id/tanggal1"
                     android:layout_marginTop="10dp"
@@ -120,16 +120,16 @@
                     android:textSize="20sp"
                     android:text="Tanggal Janji"/>
                 <TextView
-                    android:id="@+id/tanggal2"
+                    android:id="@+id/selecteddate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="18sp"
-                    android:text="test"/>
+                    />
                 <Button
                     android:id="@+id/UbahJanji"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Reschedule Permintaan Janji"
+                    android:text="Ubah Permintaan Janji"
                     android:background="@drawable/mybutton"
                     android:layout_marginTop="15dp"
                     android:textColor="#ffffff"/>
