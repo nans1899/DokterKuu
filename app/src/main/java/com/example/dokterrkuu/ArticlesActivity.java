@@ -45,12 +45,18 @@ public class ArticlesActivity extends Fragment {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Artikel").child("0");
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Articles article = dataSnapshot.getValue(Articles.class);
-                String value = dataSnapshot.getValue().toString();
-                Articles appData = dataSnapshot.getValue(Articles.class);
+                if(dataSnapshot.getValue()==null){
+                    Foto_Artikel.setImageResource(R.mipmap.ic_default_article);
+                    Judul_Artikel.setText("Tidak Ada Artikel");
+                    Preview_Artikel.setText("Tidak Ada Artikel");
+                }else {
+                    Articles article = dataSnapshot.getValue(Articles.class);
+                    String value = dataSnapshot.getValue().toString();
+                    Articles appData = dataSnapshot.getValue(Articles.class);
                     Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel);
                     Judul_Artikel.setText(appData.getJudul_Artikel());
                     Preview_Artikel.setText(appData.getPreview_Artikel());
+                }
             }
 
             @Override
@@ -71,12 +77,18 @@ public class ArticlesActivity extends Fragment {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Artikel").child("1");
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Articles article = dataSnapshot.getValue(Articles.class);
-                String value = dataSnapshot.getValue().toString();
-                Articles appData = dataSnapshot.getValue(Articles.class);
-                Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel1);
-                Judul_Artikel1.setText(appData.getJudul_Artikel());
-                Preview_Artikel1.setText(appData.getPreview_Artikel());
+                if(dataSnapshot.getValue()==null){
+                    Foto_Artikel1.setImageResource(R.mipmap.ic_default_article);
+                    Judul_Artikel1.setText("Tidak Ada Artikel");
+                    Preview_Artikel1.setText("Tidak Ada Artikel");
+                }else {
+                    Articles article = dataSnapshot.getValue(Articles.class);
+                    String value = dataSnapshot.getValue().toString();
+                    Articles appData = dataSnapshot.getValue(Articles.class);
+                    Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel1);
+                    Judul_Artikel1.setText(appData.getJudul_Artikel());
+                    Preview_Artikel1.setText(appData.getPreview_Artikel());
+                }
             }
 
             @Override
@@ -97,12 +109,18 @@ public class ArticlesActivity extends Fragment {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Artikel").child("2");
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Articles article = dataSnapshot.getValue(Articles.class);
-                String value = dataSnapshot.getValue().toString();
-                Articles appData = dataSnapshot.getValue(Articles.class);
-                Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel2);
-                Judul_Artikel2.setText(appData.getJudul_Artikel());
-                Preview_Artikel2.setText(appData.getPreview_Artikel());
+                if(dataSnapshot.getValue()==null){
+                    Foto_Artikel2.setImageResource(R.mipmap.ic_default_article);
+                    Judul_Artikel2.setText("Tidak Ada Artikel");
+                    Preview_Artikel2.setText("Tidak Ada Artikel");
+                }else {
+                    Articles article = dataSnapshot.getValue(Articles.class);
+                    String value = dataSnapshot.getValue().toString();
+                    Articles appData = dataSnapshot.getValue(Articles.class);
+                    Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel2);
+                    Judul_Artikel2.setText(appData.getJudul_Artikel());
+                    Preview_Artikel2.setText(appData.getPreview_Artikel());
+                }
             }
 
             @Override
@@ -123,12 +141,18 @@ public class ArticlesActivity extends Fragment {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Artikel").child("3");
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Articles article = dataSnapshot.getValue(Articles.class);
-                String value = dataSnapshot.getValue().toString();
-                Articles appData = dataSnapshot.getValue(Articles.class);
-                Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel3);
-                Judul_Artikel3.setText(appData.getJudul_Artikel());
-                Preview_Artikel3.setText(appData.getPreview_Artikel());
+                if(dataSnapshot.getValue()==null){
+                    Foto_Artikel3.setImageResource(R.mipmap.ic_default_article);
+                    Judul_Artikel3.setText("Tidak Ada Artikel");
+                    Preview_Artikel3.setText("Tidak Ada Artikel");
+                }else {
+                    Articles article = dataSnapshot.getValue(Articles.class);
+                    String value = dataSnapshot.getValue().toString();
+                    Articles appData = dataSnapshot.getValue(Articles.class);
+                    Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel3);
+                    Judul_Artikel3.setText(appData.getJudul_Artikel());
+                    Preview_Artikel3.setText(appData.getPreview_Artikel());
+                }
             }
 
             @Override
@@ -149,12 +173,18 @@ public class ArticlesActivity extends Fragment {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Artikel").child("4");
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Articles article = dataSnapshot.getValue(Articles.class);
-                String value = dataSnapshot.getValue().toString();
-                Articles appData = dataSnapshot.getValue(Articles.class);
-                Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel4);
-                Judul_Artikel4.setText(appData.getJudul_Artikel());
-                Preview_Artikel4.setText(appData.getPreview_Artikel());
+                if(dataSnapshot.getValue()==null){
+                    Foto_Artikel4.setImageResource(R.mipmap.ic_default_article);
+                    Judul_Artikel4.setText("Tidak Ada Artikel");
+                    Preview_Artikel4.setText("Tidak Ada Artikel");
+                }else{
+                    Articles article = dataSnapshot.getValue(Articles.class);
+                    String value = dataSnapshot.getValue().toString();
+                    Articles appData = dataSnapshot.getValue(Articles.class);
+                    Glide.with(getContext()).load(article.getFoto_Artikel()).into(Foto_Artikel4);
+                    Judul_Artikel4.setText(appData.getJudul_Artikel());
+                    Preview_Artikel4.setText(appData.getPreview_Artikel());
+                }
             }
 
             @Override
