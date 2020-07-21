@@ -1,5 +1,6 @@
 package com.example.dokterrkuu;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -44,9 +45,9 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileFragment extends Fragment {
 
     ImageView profpic;
-    TextView textnama;
+    EditText textnama;
     EditText Emailuser, Hpuser, Alamatuser;
-    Button buttonLogout;
+    Button buttonLogout, buttonUpdate;
 
     DatabaseReference reference;
     FirebaseUser fuser;
@@ -69,6 +70,7 @@ public class ProfileFragment extends Fragment {
         Hpuser = view.findViewById(R.id.hpuser);
         Alamatuser = view.findViewById(R.id.alamatuser);
         buttonLogout = view.findViewById(R.id.logoutbutton);
+        buttonUpdate = view.findViewById(R.id.updatebutton);
 
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
@@ -85,11 +87,14 @@ public class ProfileFragment extends Fragment {
                 Emailuser.setText(user.getEmail());
                 Hpuser.setText(user.getPhone());
                 Alamatuser.setText(user.getAddress());
-                if (user.getImageURL().equals("default")) {
-                    profpic.setImageResource(R.mipmap.ic_default_pic);
-                } else {
-                    Glide.with(getContext()).load(user.getImageURL()).into(profpic);
+                if(isAdded()){
+                    if (user.getImageURL().equals("default")) {
+                        profpic.setImageResource(R.mipmap.ic_default_pic);
+                    } else {
+                        Glide.with(getActivity().getApplicationContext()).load(user.getImageURL()).into(profpic);
+                    }
                 }
+
             }
 
             @Override
@@ -102,6 +107,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 openImage();
+            }
+        });
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                update();
             }
         });
 
@@ -202,5 +214,63 @@ public class ProfileFragment extends Fragment {
 
 
     }
+
+
+    public void update(){
+        fuser = FirebaseAuth.getInstance().getCurrentUser();
+        assert fuser != null;
+
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                if(textnama.equals("") || Emailuser.equals("") || Alamatuser.equals("") || Hpuser.equals("")){
+                    Toast.makeText(getContext(), "Tolong Isi Bagian Yang Dibutuhkan", Toast.LENGTH_SHORT).show();
+                }else{
+                    String nama = textnama.getText().toString();
+                    String email = Emailuser.getText().toString();
+                    String alamat = Alamatuser.getText().toString();
+                    String hpuser = Hpuser.getText().toString();
+                    String photo = user.getImageURL();
+                    String id = user.getId();
+
+                    HashMap<String, String> hashmap = new HashMap<>();
+                    hashmap.put("username", nama);
+                    hashmap.put("email", email);
+                    hashmap.put("Address", alamat);
+                    hashmap.put("Phone",hpuser);
+                    hashmap.put("imageURL", photo);
+                    hashmap.put("id",id);
+
+                    reference.setValue(hashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(getContext(), "Data Pribadi Anda Berhasil Diubah", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(getContext(), "Maaf Data Anda Tidak Berhasil Diubah", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+    }
+
+
+
 
 }

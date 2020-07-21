@@ -59,11 +59,14 @@ public class HomeFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 uName.setText(user.getUsername());
-                if(user.getImageURL().equals("default")){
-                    ProfPic.setImageResource(R.mipmap.ic_default_pic);
-                }else{
-                    Glide.with(getContext()).load(user.getImageURL()).into(ProfPic);
+                if(isAdded()){
+                    if(user.getImageURL().equals("default")){
+                        ProfPic.setImageResource(R.mipmap.ic_default_pic);
+                    }else{
+                        Glide.with(getActivity().getApplicationContext()).load(user.getImageURL()).into(ProfPic);
+                    }
                 }
+
             }
 
             @Override
